@@ -23,7 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TampilanUserSudahLogin"></activity>
+        <activity android:name=".TampilanUserSudahLogin" />
+        <activity
+            android:name=".TampilanTekanButtonDetailLapangan"
+            android:label="@string/title_activity_tampilan_tekan_button_detail_lapangan"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
