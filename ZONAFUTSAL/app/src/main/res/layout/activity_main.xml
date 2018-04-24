@@ -7,50 +7,37 @@
     tools:context="com.example.andre.zonafutsal.MainActivity">
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/button9"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="384dp"
+        android:layout_marginEnd="194dp"
+        android:layout_marginLeft="102dp"
+        android:layout_marginRight="194dp"
+        android:layout_marginStart="102dp"
+        android:layout_marginTop="79dp"
+        android:onClick="Button"
         android:text="Button"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="168dp"
-        tools:layout_editor_absoluteY="75dp" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints,OnClick" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/button10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="208dp"
+        android:layout_marginEnd="73dp"
+        android:layout_marginLeft="223dp"
+        android:layout_marginRight="73dp"
+        android:layout_marginStart="223dp"
+        android:layout_marginTop="255dp"
         android:text="Button"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="204dp"
-        tools:layout_editor_absoluteY="310dp" />
-
-    <Button
-        android:id="@+id/button7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Button"
-        tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="126dp"
-        tools:layout_editor_absoluteY="196dp" />
-
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="68dp"
-        tools:ignore="MissingConstraints" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPassword"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="212dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         tools:ignore="MissingConstraints" />
 </android.support.constraint.ConstraintLayout>
