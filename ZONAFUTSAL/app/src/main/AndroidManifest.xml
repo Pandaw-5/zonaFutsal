@@ -24,9 +24,16 @@
             </intent-filter>
         </activity>
         <activity
+<<<<<<< HEAD
             android:name=".PesanActivity"
             android:label="@string/title_activity_pesan"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+=======
+            android:name=".TampilanTekanButtonDetailLapangan"
+            android:label="@string/title_activity_tampilan_tekan_button_detail_lapangan"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".TampilanButtonDetailLapangan"></activity>
+>>>>>>> aeba79a9a56bf33011a727795fd2f086a85cd628
     </application>
 
 </manifest>

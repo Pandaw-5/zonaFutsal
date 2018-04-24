@@ -1,7 +1,13 @@
 <resources>
     <string name="app_name">ZONA FUTSAL</string>
     <string name="todo">TODO</string>
+<<<<<<< HEAD
     <string name="title_activity_pesan">PesanActivity</string>
+=======
+    <string name="title_activity_tampilan_tekan_button_detail_lapangan">
+        TampilanTekanButtonDetailLapangan
+    </string>
+>>>>>>> aeba79a9a56bf33011a727795fd2f086a85cd628
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="nav_header_title">Android Studio</string>
