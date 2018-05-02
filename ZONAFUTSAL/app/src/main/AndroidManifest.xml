@@ -23,15 +23,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-
-            android:name=".PesanActivity"
-            android:label="@string/title_activity_pesan"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-            android:name=".TampilanTekanButtonDetailLapangan"
+        <![CDATA[
+        android:name=".TampilanTekanButtonDetailLapangan"
             android:label="@string/title_activity_tampilan_tekan_button_detail_lapangan"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".TampilanButtonDetailLapangan"></activity>
+        ]]>
+        <activity android:name=".TampilanButtonDetailLapangan" />
+        <activity android:name=".PesanActivity"></activity>
     </application>
 
 </manifest>
