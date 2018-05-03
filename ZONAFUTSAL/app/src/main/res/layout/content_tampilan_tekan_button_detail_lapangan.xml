@@ -153,7 +153,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="10dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="97dp"
+        android:layout_marginTop="101dp"
         app:layout_constraintBottom_toTopOf="@+id/button2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView6"

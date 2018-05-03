@@ -55,7 +55,7 @@ public class TampilanTekanButtonDetailLapangan extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.tampilan_tekan_button_detail_lapangan, menu);
+        getMenuInflater().inflate(R.menu.activity_tampilan_tekan_button_detail_lapangan_drawer, menu);
         return true;
     }
 
