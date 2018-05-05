@@ -29,7 +29,15 @@
             android:theme="@style/AppTheme.NoActionBar" />
         ]]>
         <activity android:name=".TampilanButtonDetailLapangan" />
-        <activity android:name=".PesanActivity"></activity>
+        <activity android:name=".PesanActivity" />
+        <activity
+            android:name=".TampilanKlikButtonDetail"
+            android:label="@string/title_activity_tampilan_klik_button_detail"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".hgdhx"
+            android:label="@string/title_activity_hgdhx"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
