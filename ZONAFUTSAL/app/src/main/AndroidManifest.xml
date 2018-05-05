@@ -2,6 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.andre.zonafutsal">
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -28,12 +33,18 @@
             android:label="@string/title_activity_tampilan_tekan_button_detail_lapangan"
             android:theme="@style/AppTheme.NoActionBar" />
         ]]>
-        <activity android:name=".TampilanButtonDetailLapangan" />
+        <activity android:name=".DetailLapanganActivity" />
         <activity android:name=".PesanActivity" />
         <activity
             android:name=".MenuAktivity"
             android:label="@string/title_activity_menu_aktivity"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".MasukActivity"
+            android:label="@string/title_activity_masuk" />
+        <activity
+            android:name=".DaftarActivity"
+            android:label="@string/title_activity_daftar"></activity>
     </application>
 
 </manifest>
