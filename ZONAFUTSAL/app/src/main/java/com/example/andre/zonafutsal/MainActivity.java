@@ -7,17 +7,17 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    private Button button9;
-    private Button button10;
+    public Button button4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        button9 = (Button) findViewById(R.id.button9);
-        button9.setOnClickListener(new View.OnClickListener() {
+        button4 = (Button) findViewById(R.id.button4);
+        button4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+<<<<<<< HEAD
                 Intent Intent = new Intent(MainActivity.this, TampilanKlikButtonDetail.class);
                 startActivity(Intent);
             }
@@ -28,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent Intent = new Intent(MainActivity.this, TampilanButtonDetailLapangan.class);
+=======
+                Intent Intent = new Intent(MainActivity.this, MenuAktivity.class);
+>>>>>>> b1506868944a22e25eea5e2ba828053306d439ac
                 startActivity(Intent);
             }
         });

@@ -31,12 +31,17 @@
         <activity android:name=".TampilanButtonDetailLapangan" />
         <activity android:name=".PesanActivity" />
         <activity
+<<<<<<< HEAD
             android:name=".TampilanKlikButtonDetail"
             android:label="@string/title_activity_tampilan_klik_button_detail"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".hgdhx"
             android:label="@string/title_activity_hgdhx"
+=======
+            android:name=".MenuAktivity"
+            android:label="@string/title_activity_menu_aktivity"
+>>>>>>> b1506868944a22e25eea5e2ba828053306d439ac
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
