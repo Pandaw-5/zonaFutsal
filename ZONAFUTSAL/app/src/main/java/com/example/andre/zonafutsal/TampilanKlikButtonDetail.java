@@ -56,7 +56,7 @@ public class TampilanKlikButtonDetail extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.hgdhx, menu);
+        getMenuInflater().inflate(R.menu.tampilan_klik_button_detail, menu);
         return true;
     }
 

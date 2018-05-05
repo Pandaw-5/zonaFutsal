@@ -14,11 +14,9 @@
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
-<<<<<<< HEAD
     <string name="title_activity_tampilan_klik_button_detail">TampilanKlikButtonDetail</string>
     <string name="title_activity_hgdhx">hgdhx</string>
 =======
     <string name="title_activity_menu_aktivity">MenuAktivity</string>
     <string name="menuuser">MenuUser</string>
->>>>>>> b1506868944a22e25eea5e2ba828053306d439ac
 </resources>
