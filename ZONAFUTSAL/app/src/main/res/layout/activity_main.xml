@@ -7,37 +7,20 @@
     tools:context="com.example.andre.zonafutsal.MainActivity">
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/button4"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="384dp"
-        android:layout_marginEnd="194dp"
-        android:layout_marginLeft="102dp"
-        android:layout_marginRight="194dp"
-        android:layout_marginStart="102dp"
-        android:layout_marginTop="79dp"
-        android:onClick="Button"
-        android:text="Button"
+        android:layout_height="42dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:text="@string/menuuser"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.453"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints,OnClick" />
+        app:layout_constraintTop_toTopOf="parent" />
 
-    <Button
-        android:id="@+id/button10"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="208dp"
-        android:layout_marginEnd="73dp"
-        android:layout_marginLeft="223dp"
-        android:layout_marginRight="73dp"
-        android:layout_marginStart="223dp"
-        android:layout_marginTop="255dp"
-        android:text="Button"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
 </android.support.constraint.ConstraintLayout>

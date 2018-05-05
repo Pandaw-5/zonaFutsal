@@ -29,7 +29,11 @@
             android:theme="@style/AppTheme.NoActionBar" />
         ]]>
         <activity android:name=".TampilanButtonDetailLapangan" />
-        <activity android:name=".PesanActivity"></activity>
+        <activity android:name=".PesanActivity" />
+        <activity
+            android:name=".MenuAktivity"
+            android:label="@string/title_activity_menu_aktivity"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
