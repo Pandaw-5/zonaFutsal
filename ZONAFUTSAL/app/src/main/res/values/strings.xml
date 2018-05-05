@@ -16,7 +16,8 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_tampilan_klik_button_detail">TampilanKlikButtonDetail</string>
     <string name="title_activity_hgdhx">hgdhx</string>
-=======
+    =======
     <string name="title_activity_menu_aktivity">MenuAktivity</string>
     <string name="menuuser">MenuUser</string>
+    <string name="title_activity_tampilan_klik_detail_lapangan">TampilanKlikDetailLapangan</string>
 </resources>

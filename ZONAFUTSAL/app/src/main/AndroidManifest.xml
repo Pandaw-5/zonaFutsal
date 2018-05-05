@@ -30,10 +30,13 @@
         ]]>
         <activity android:name=".TampilanButtonDetailLapangan" />
         <activity android:name=".PesanActivity" />
-
-            android:name=".TampilanKlikButtonDetail"
-            android:label="@string/title_activity_tampilan_klik_button_detail"
-            android:theme="@style/AppTheme.NoActionBar" />
+        android:name=".TampilanKlikButtonDetail"
+        android:label="@string/title_activity_tampilan_klik_button_detail"
+        android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".TampilanKlikDetailLapangan"
+            android:label="@string/title_activity_tampilan_klik_detail_lapangan"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
