@@ -28,18 +28,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <![CDATA[
-        android:name=".TampilanTekanButtonDetailLapangan"
-            android:label="@string/title_activity_tampilan_tekan_button_detail_lapangan"
-            android:theme="@style/AppTheme.NoActionBar" />
-        ]]>
         <activity android:name=".DetailLapanganActivity" />
         <activity android:name=".PesanActivity" />
-        android:name=".TampilanKlikButtonDetail"
-        android:label="@string/title_activity_tampilan_klik_button_detail"
-        android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
-<<<<<<< HEAD
             android:name=".MenuAktivity"
             android:label="@string/title_activity_menu_aktivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -49,11 +41,10 @@
         <activity
             android:name=".DaftarActivity"
             android:label="@string/title_activity_daftar"></activity>
-=======
+         <activity
             android:name=".TampilanKlikDetailLapangan"
             android:label="@string/title_activity_tampilan_klik_detail_lapangan"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
->>>>>>> c24419134b0f4e7668c420b073c5b0df54c65223
+            android:theme="@style/AppTheme.NoActionBar"/>
     </application>
 
 </manifest>
