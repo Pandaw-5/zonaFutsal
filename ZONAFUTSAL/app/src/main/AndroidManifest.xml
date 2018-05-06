@@ -33,7 +33,6 @@
         <activity android:name=".PesanActivity" />
 
         <activity
-
             android:name=".MenuAktivity"
             android:label="@string/title_activity_menu_aktivity"
             android:theme="@style/AppTheme.NoActionBar" />
@@ -43,6 +42,7 @@
         <activity
             android:name=".DaftarActivity"
             android:label="@string/title_activity_daftar"></activity>
+
         <activity
             android:name=".TampilanKlikDetailLapangan"
             android:label="@string/title_activity_tampilan_klik_detail_lapangan"
