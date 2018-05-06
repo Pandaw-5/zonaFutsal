@@ -18,21 +18,11 @@ import android.widget.Button;
 
 public class MenuAktivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-    public Button button;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
-
-        button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent Intent = new Intent(MenuAktivity.this, DetailLapanganActivity.class);
-                startActivity(Intent);
-            }
-        });
-
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
