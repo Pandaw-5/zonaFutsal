@@ -1,5 +1,6 @@
 package com.example.andre.zonafutsal;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -12,17 +13,40 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
-public class TampilanKlikDetailLapangan extends AppCompatActivity
+public class TampilanPasKlikDetailLap extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    public Button detail2;
+    public Button detail1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tampilan_klik_detail_lapangan);
+        setContentView(R.layout.activity_tampilan_pas_klik_detail_lap);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+<<<<<<< HEAD:ZONAFUTSAL/app/src/main/java/com/example/andre/zonafutsal/TampilanKlikDetailLapangan.java
+=======
+        detail2 = (Button) findViewById(R.id.detail2);
+        detail2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(TampilanPasKlikDetailLap.this, DetailLapangan2Activity.class);
+                startActivity(Intent);
+            }
+        });
+
+        detail1 = (Button) findViewById(R.id.detail1);
+        detail1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(TampilanPasKlikDetailLap.this, DetailLapanganActivity.class);
+                startActivity(Intent);
+            }
+        });
+>>>>>>> 208d959353625d3582f5363a9c312156205a3c25:ZONAFUTSAL/app/src/main/java/com/example/andre/zonafutsal/TampilanPasKlikDetailLap.java
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -47,7 +71,7 @@ public class TampilanKlikDetailLapangan extends AppCompatActivity
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.tampilan_klik_detail_lapangan, menu);
+        getMenuInflater().inflate(R.menu.tampilan_pas_klik_detail_lap, menu);
         return true;
     }
 
@@ -89,5 +113,6 @@ public class TampilanKlikDetailLapangan extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+
     }
 }

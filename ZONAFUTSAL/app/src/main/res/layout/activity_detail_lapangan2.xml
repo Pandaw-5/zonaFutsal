@@ -17,7 +17,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:text="Lapangan 1"
+        android:text="Lapangan 2"
         android:textColor="@android:color/black"
         android:textSize="24sp"
         android:textStyle="bold"
@@ -41,7 +41,7 @@
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/lap1"
+        app:srcCompat="@drawable/lap2"
         tools:ignore="MissingConstraints" />
 
     <TextView
@@ -87,7 +87,7 @@
         tools:ignore="MissingConstraints" />
 
     <Button
-        android:id="@+id/button100"
+        android:id="@+id/button101"
         style="?android:textAppearanceSmall"
         android:layout_width="111dp"
         android:layout_height="40dp"
@@ -98,7 +98,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="300dp"
         android:background="@android:color/holo_blue_dark"
-        android:text="Pesan"
+        android:text="Pesan 2"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

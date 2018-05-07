@@ -5,11 +5,12 @@
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@android:color/holo_green_light"
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
     <include
-        layout="@layout/app_bar_tampilan_klik_detail_lapangan"
+        layout="@layout/app_bar_tampilan_pas_klik_detail_lap"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
@@ -19,7 +20,7 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_tampilan_klik_detail_lapangan"
-        app:menu="@menu/activity_tampilan_klik_detail_lapangan_drawer" />
+        app:headerLayout="@layout/nav_header_tampilan_pas_klik_detail_lap"
+        app:menu="@menu/activity_tampilan_pas_klik_detail_lap_drawer" />
 
 </android.support.v4.widget.DrawerLayout>
