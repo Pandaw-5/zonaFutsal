@@ -29,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
         button5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Intent = new Intent(MainActivity.this, TampilanKlikDetailLapangan.class);
+                Intent Intent = new Intent(MainActivity.this, TampilanPasKlikDetailLap.class);
                 startActivity(Intent);
             }
         });
