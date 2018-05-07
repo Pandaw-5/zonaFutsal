@@ -3,9 +3,8 @@
     package="com.example.andre.zonafutsal">
 
     <!-- To auto-complete the email text field in the login form with the user's emails -->
-    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
-    <uses-permission android:name="android.permission.READ_PROFILE" />
-    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -28,6 +27,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".DetailLapanganActivity" />
         <activity android:name=".PesanActivity" />
         <activity
@@ -39,11 +39,21 @@
             android:label="@string/title_activity_masuk" />
         <activity
             android:name=".DaftarActivity"
+<<<<<<< HEAD
             android:label="@string/title_activity_daftar" />
         <activity
             android:name=".TampilanPasKlikDetailLap"
             android:label="@string/title_activity_tampilan_pas_klik_detail_lap"
             android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
+=======
+            android:label="@string/title_activity_daftar"></activity>
 
-</manifest>
+        <activity
+            android:name=".TampilanKlikDetailLapangan"
+            android:label="@string/title_activity_tampilan_klik_detail_lapangan"
+            android:theme="@style/AppTheme.NoActionBar"></activity></application>
+
+    </manifest>
+>>>>>>> d95ca2b97ceb5fb9cd5cbe0523a9ca7f4c1376d3
+

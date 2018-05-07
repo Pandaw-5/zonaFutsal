@@ -18,6 +18,7 @@
     <string name="title_activity_hgdhx">hgdhx</string>
     <string name="title_activity_menu_aktivity">MenuAktivity</string>
     <string name="menuuser">MenuUser</string>
+
     <string name="title_activity_main2">Main2Activity</string>
     <string name="informasi_lapangan">INFORMASI LAPANGAN</string>
     <string name="detail">DETAIL</string>
@@ -46,6 +47,11 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_daftar">Sign in</string>
     <string name="nama">hint</string>
+
     <string name="title_activity_tampilan_klik_detail_lapangan">TampilanKlikDetailLapangan</string>
+<<<<<<< HEAD
     <string name="title_activity_tampilan_pas_klik_detail_lap">TampilanPasKlikDetailLap</string>
+=======
+
+>>>>>>> d95ca2b97ceb5fb9cd5cbe0523a9ca7f4c1376d3
 </resources>
