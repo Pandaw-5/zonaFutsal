@@ -31,7 +31,7 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
         detail2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Intent = new Intent(TampilanPasKlikDetailLap.this, DetailLapanganActivity.class);
+                Intent Intent = new Intent(TampilanPasKlikDetailLap.this, DetailLapangan2Activity.class);
                 startActivity(Intent);
             }
         });
