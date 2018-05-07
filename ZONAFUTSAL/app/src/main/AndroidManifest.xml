@@ -35,9 +35,15 @@
             android:name=".MenuAktivity"
             android:label="@string/title_activity_menu_aktivity"
             android:theme="@style/AppTheme.NoActionBar" />
+
         <activity
             android:name=".MasukActivity"
-            android:label="@string/title_activity_masuk" />
+            android:label="@string/title_activity_masuk" >
+            <intent-filter>
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
         <activity
             android:name=".DaftarActivity"
             android:label="@string/title_activity_daftar"></activity>

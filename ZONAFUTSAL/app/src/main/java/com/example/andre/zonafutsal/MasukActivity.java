@@ -58,7 +58,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 public class MasukActivity extends AppCompatActivity{
     ProgressDialog pDialog;
     Button btn_register, btn_login;
-    EditText txt_username, txt_password;
+    EditText notelp, txt_password;
     Intent intent;
 
     int success;
@@ -71,7 +71,7 @@ public class MasukActivity extends AppCompatActivity{
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
 
-    public final static String TAG_USERNAME = "username";
+    public final static String TAG_USERNAME = "no.hp";
     public final static String TAG_ID = "id";
 
     String tag_json_obj = "json_obj_req";
@@ -99,8 +99,8 @@ public class MasukActivity extends AppCompatActivity{
         }
 
         btn_login = (Button) findViewById(R.id.btn_login);
-        //btn_register = (Button) findViewById(R.id.btn_register);
-        txt_username = (EditText) findViewById(R.id.noTelepon);
+        btn_register = (Button) findViewById(R.id.btn_register);
+        notelp = (EditText) findViewById(R.id.noTelepon);
         txt_password = (EditText) findViewById(R.id.password);
 
         // Cek session login jika TRUE maka langsung buka MainActivity
@@ -123,7 +123,7 @@ public class MasukActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                String username = txt_username.getText().toString();
+                String username = notelp.getText().toString();
                 String password = txt_password.getText().toString();
 
                 // mengecek kolom yang kosong
@@ -165,7 +165,7 @@ public class MasukActivity extends AppCompatActivity{
 
             @Override
             public void onResponse(String response) {
-                Log.e(TAG, "Login Response: " + response.toString());
+                Log.e(TAG, "Login Response: " + response);
                 hideDialog();
 
                 try {
@@ -186,7 +186,8 @@ public class MasukActivity extends AppCompatActivity{
                         editor.putBoolean(session_status, true);
                         editor.putString(TAG_ID, id);
                         editor.putString(TAG_USERNAME, username);
-                        editor.commit();
+                        editor.apply();
+
 
                         // Memanggil main activity
                         Intent intent = new Intent(MasukActivity.this, MainActivity.class);
