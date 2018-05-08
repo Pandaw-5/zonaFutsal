@@ -105,5 +105,10 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
         return true;
 
+
+    }
+
+    public void gambar(View view){
+        Intent i =new Intent(getApplicationContext(),InfoProfilMember.class);  startActivity(i);
     }
 }

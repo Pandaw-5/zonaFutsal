@@ -39,7 +39,8 @@
             android:name=".TampilanPasKlikDetailLap"
             android:label="@string/title_activity_tampilan_pas_klik_detail_lap"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DetailLapangan2Activity"></activity>
+        <activity android:name=".DetailLapangan2Activity" />
+        <activity android:name=".InfoProfilMember"></activity>
     </application>
 
 </manifest>
