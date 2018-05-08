@@ -20,13 +20,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".DetailLapanganActivity" />
         <activity android:name=".PesanActivity" />
         <activity
@@ -40,7 +33,14 @@
             android:label="@string/title_activity_tampilan_pas_klik_detail_lap"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DetailLapangan2Activity" />
+<<<<<<< HEAD
         <activity android:name=".InfoProfilMember"></activity>
+=======
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+>>>>>>> a553ddd7c3a9f086a32226835068123a46410377
     </application>
 
 </manifest>
