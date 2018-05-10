@@ -93,23 +93,22 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_camera) {
-            // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
-
-        } else if (id == R.id.nav_slideshow) {
-
-        } else if (id == R.id.nav_manage) {
-
-        } else if (id == R.id.nav_share) {
-
-        } else if (id == R.id.nav_send) {
-
+        if (id == R.id.beranda) {
+            Intent i =new Intent(getApplicationContext(),MainActivity.class);  startActivity(i);
+        } else if (id == R.id.masuk) {
+            Intent i =new Intent(getApplicationContext(),DetailLapangan2Activity.class);  startActivity(i);
+        } else if (id == R.id.keluar) {
+            Intent i =new Intent(getApplicationContext(),SplashScreen.class);  startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
 
+
+    }
+
+    public void gambar(View view){
+        Intent i =new Intent(getApplicationContext(),InfoProfilMember.class);  startActivity(i);
     }
 }

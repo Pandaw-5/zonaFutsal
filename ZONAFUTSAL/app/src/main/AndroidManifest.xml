@@ -21,17 +21,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".MasukActivity"
+            android:label="@string/title_activity_masuk"/>
         <activity android:name=".DetailLapanganActivity" />
         <activity android:name=".PesanActivity" />
         <activity
-            android:name=".MenuAktivity"
-            android:label="@string/title_activity_menu_aktivity"
-            android:theme="@style/AppTheme.NoActionBar" />
-
-        <activity
-            android:name=".MasukActivity"
-            android:label="@string/title_activity_masuk" >
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
 
         <activity
@@ -41,7 +39,10 @@
             android:name=".TampilanPasKlikDetailLap"
             android:label="@string/title_activity_tampilan_pas_klik_detail_lap"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DetailLapangan2Activity"></activity>
+        <activity android:name=".DetailLapangan2Activity" />
+
+        <activity android:name=".InfoProfilMember"></activity>
+
     </application>
 
 </manifest>
