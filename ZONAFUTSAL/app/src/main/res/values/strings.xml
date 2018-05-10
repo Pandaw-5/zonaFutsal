@@ -49,4 +49,15 @@
     <string name="nama">hint</string>
     <string name="title_activity_tampilan_pas_klik_detail_lap">TampilanPasKlikDetailLap</string>
     <string name="title_activity_main">MainActivity</string>
+
+    <string-array name="android_dropdown_arrays">
+        <item>Pilih Lapangan </item>
+        <item>Lapangan 1</item>
+        <item>Lapangan 2</item>
+        <item>Lapangan 3</item>
+        <item>Lapangan 5</item>
+        <item>Lapangan 6</item>
+        <item>Lapangan 7</item>
+    </string-array>
+
 </resources>
