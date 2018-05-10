@@ -57,7 +57,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 public class DaftarActivity extends AppCompatActivity{
     ProgressDialog pDialog;
     Button btn_register, btn_login;
-    EditText txt_username, txt_password, txt_confirm_password;
+    EditText txt_nohp, txt_password, txt_confirm_password, txt_nama, txt_alamat;
     Intent intent;
 
     int success;
@@ -88,36 +88,40 @@ public class DaftarActivity extends AppCompatActivity{
             }
         }
 
-        btn_login = (Button) findViewById(R.id.btn_login);
+        //btn_login = (Button) findViewById(R.id.btn_login);
         btn_register = (Button) findViewById(R.id.btn_daftar);
-        txt_username = (EditText) findViewById(R.id.nomor);
+        txt_nohp = (EditText) findViewById(R.id.nomor);
         txt_password = (EditText) findViewById(R.id.password);
-        //txt_confirm_password = (EditText) findViewById(R.id.txt_confirm_password);
+        txt_confirm_password = (EditText) findViewById(R.id.conPassword);
+        txt_nama = (EditText) findViewById(R.id.nama);
+        txt_alamat = (EditText) findViewById(R.id.alamat);
 
-        btn_login.setOnClickListener(new View.OnClickListener() {
+      //  btn_login.setOnClickListener(new View.OnClickListener() {
 
-            @Override
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                intent = new Intent(DaftarActivity.this, MasukActivity.class);
-                finish();
-                startActivity(intent);
-            }
-        });
+      //      @Override
+      //      public void onClick(View v) {
+      //          // TODO Auto-generated method stub
+      //          intent = new Intent(DaftarActivity.this, MasukActivity.class);
+      //          finish();
+      //          startActivity(intent);
+      //      }
+      //  });
 
         btn_register.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                String username = txt_username.getText().toString();
+                String nohp = txt_nohp.getText().toString();
                 String password = txt_password.getText().toString();
                 String confirm_password = txt_confirm_password.getText().toString();
+                String nama = txt_nama.getText().toString();
+                String alamat = txt_alamat.getText().toString();
 
                 if (conMgr.getActiveNetworkInfo() != null
                         && conMgr.getActiveNetworkInfo().isAvailable()
                         && conMgr.getActiveNetworkInfo().isConnected()) {
-                    checkRegister(username, password, confirm_password);
+                    checkRegister(nohp, password, confirm_password, nama, alamat);
                 } else {
                     Toast.makeText(getApplicationContext(), "No Internet Connection", Toast.LENGTH_SHORT).show();
                 }
@@ -126,7 +130,7 @@ public class DaftarActivity extends AppCompatActivity{
 
     }
 
-    private void checkRegister(final String username, final String password, final String confirm_password) {
+    private void checkRegister(final String nohp, final String password, final String confirm_password, final String nama, final String alamat) {
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
         pDialog.setMessage("Register ...");
@@ -151,9 +155,11 @@ public class DaftarActivity extends AppCompatActivity{
                         Toast.makeText(getApplicationContext(),
                                 jObj.getString(TAG_MESSAGE), Toast.LENGTH_LONG).show();
 
-                        txt_username.setText("");
+                        txt_nohp.setText("");
                         txt_password.setText("");
                         txt_confirm_password.setText("");
+                        txt_nama.setText("");
+                        txt_alamat.setText("");
 
                     } else {
                         Toast.makeText(getApplicationContext(),
@@ -183,10 +189,11 @@ public class DaftarActivity extends AppCompatActivity{
             protected Map<String, String> getParams() {
                 // Posting parameters to login url
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("username", username);
+                params.put("nohp", nohp);
                 params.put("password", password);
                 params.put("confirm_password", confirm_password);
-
+                params.put("nama", nama);
+                params.put("alamat", alamat);
                 return params;
             }
 

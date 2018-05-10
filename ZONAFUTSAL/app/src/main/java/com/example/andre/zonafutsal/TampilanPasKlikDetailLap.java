@@ -27,8 +27,6 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-<<<<<<< HEAD:ZONAFUTSAL/app/src/main/java/com/example/andre/zonafutsal/TampilanKlikDetailLapangan.java
-=======
         detail2 = (Button) findViewById(R.id.detail2);
         detail2.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,7 +44,6 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
                 startActivity(Intent);
             }
         });
->>>>>>> 208d959353625d3582f5363a9c312156205a3c25:ZONAFUTSAL/app/src/main/java/com/example/andre/zonafutsal/TampilanPasKlikDetailLap.java
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(

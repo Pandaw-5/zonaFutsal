@@ -58,7 +58,8 @@ import static android.Manifest.permission.READ_CONTACTS;
 public class MasukActivity extends AppCompatActivity{
     ProgressDialog pDialog;
     Button btn_register, btn_login;
-    EditText notelp, txt_password;
+    EditText txt_password;
+    AutoCompleteTextView notelp;
     Intent intent;
 
     int success;
@@ -71,14 +72,14 @@ public class MasukActivity extends AppCompatActivity{
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
 
-    public final static String TAG_USERNAME = "no.hp";
+    public final static String TAG_USERNAME = "nohp";
     public final static String TAG_ID = "id";
 
     String tag_json_obj = "json_obj_req";
 
     SharedPreferences sharedpreferences;
     Boolean session = false;
-    String id, username;
+    String id, nohp;
     public static final String my_shared_preferences = "my_shared_preferences";
     public static final String session_status = "session_status";
 
@@ -100,19 +101,19 @@ public class MasukActivity extends AppCompatActivity{
 
         btn_login = (Button) findViewById(R.id.btn_login);
         btn_register = (Button) findViewById(R.id.btn_register);
-        notelp = (EditText) findViewById(R.id.noTelepon);
-        txt_password = (EditText) findViewById(R.id.password);
+        notelp = (AutoCompleteTextView)  findViewById(R.id.noTelepon);
+        txt_password = (EditText) findViewById(R.id.katasandi);
 
         // Cek session login jika TRUE maka langsung buka MainActivity
         sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
         session = sharedpreferences.getBoolean(session_status, false);
         id = sharedpreferences.getString(TAG_ID, null);
-        username = sharedpreferences.getString(TAG_USERNAME, null);
+        nohp = sharedpreferences.getString(TAG_USERNAME, null);
 
         if (session) {
             Intent intent = new Intent(MasukActivity.this, MainActivity.class);
             intent.putExtra(TAG_ID, id);
-            intent.putExtra(TAG_USERNAME, username);
+            intent.putExtra(TAG_USERNAME, nohp);
             finish();
             startActivity(intent);
         }
@@ -123,21 +124,21 @@ public class MasukActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                String username = notelp.getText().toString();
+                String nohp = notelp.getText().toString();
                 String password = txt_password.getText().toString();
 
                 // mengecek kolom yang kosong
-                if (username.trim().length() > 0 && password.trim().length() > 0) {
+                if (nohp.trim().length() > 0 && password.trim().length() > 0) {
                     if (conMgr.getActiveNetworkInfo() != null
                             && conMgr.getActiveNetworkInfo().isAvailable()
                             && conMgr.getActiveNetworkInfo().isConnected()) {
-                        checkLogin(username, password);
+                        checkLogin(nohp, password);
                     } else {
                         Toast.makeText(getApplicationContext() ,"No Internet Connection", Toast.LENGTH_LONG).show();
                     }
                 } else {
                     // Prompt user to enter credentials
-                    Toast.makeText(getApplicationContext() ,"Kolom tidak boleh kosong", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getApplicationContext() ,"Kolomnya tidak boleh kosong", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -155,7 +156,7 @@ public class MasukActivity extends AppCompatActivity{
 
     }
 
-    private void checkLogin(final String username, final String password) {
+    private void checkLogin(final String nohp, final String password) {
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
         pDialog.setMessage("Logging in ...");
@@ -174,7 +175,7 @@ public class MasukActivity extends AppCompatActivity{
 
                     // Check for error node in json
                     if (success == 1) {
-                        String username = jObj.getString(TAG_USERNAME);
+                        String nohp = jObj.getString(TAG_USERNAME);
                         String id = jObj.getString(TAG_ID);
 
                         Log.e("Successfully Login!", jObj.toString());
@@ -185,14 +186,14 @@ public class MasukActivity extends AppCompatActivity{
                         SharedPreferences.Editor editor = sharedpreferences.edit();
                         editor.putBoolean(session_status, true);
                         editor.putString(TAG_ID, id);
-                        editor.putString(TAG_USERNAME, username);
-                        editor.apply();
+                        editor.putString(TAG_USERNAME, nohp);
+                        editor.commit();
 
 
                         // Memanggil main activity
-                        Intent intent = new Intent(MasukActivity.this, MainActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), TampilanPasKlikDetailLap.class);
                         intent.putExtra(TAG_ID, id);
-                        intent.putExtra(TAG_USERNAME, username);
+                        intent.putExtra(TAG_USERNAME, nohp);
                         finish();
                         startActivity(intent);
                     } else {
@@ -223,7 +224,7 @@ public class MasukActivity extends AppCompatActivity{
             protected Map<String, String> getParams() {
                 // Posting parameters to login url
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("username", username);
+                params.put("nohp", nohp);
                 params.put("password", password);
 
                 return params;
