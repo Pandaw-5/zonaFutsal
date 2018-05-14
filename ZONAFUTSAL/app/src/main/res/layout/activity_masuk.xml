@@ -81,15 +81,12 @@
                 android:text="Masuk"
                 android:textStyle="bold" />
 
-            <TextView
-                android:id="@+id/textView10"
+            <Button
+                android:id="@+id/btn_register"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Belum Punya Akun ? DAFTAR"
-                android:textAllCaps="false"
-                android:textColor="@android:color/black"
-                android:textSize="14sp"
-                android:textStyle="bold" />
+                android:background="@android:color/holo_blue_dark"
+                android:text="DAFTAR" />
 
         </LinearLayout>
     </ScrollView>
