@@ -39,20 +39,11 @@
             android:label="@string/title_activity_tampilan_pas_klik_detail_lap"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".DetailLapangan2Activity" />
-<<<<<<< HEAD
 
-        <activity android:name=".InfoProfilMember"></activity>
-
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-
-=======
         <activity android:name=".InfoProfilMember" />
         <activity android:name=".JadwalPesanLapanganActivity"
             android:label="Jadwal List Pemesana Lapangan"/>
->>>>>>> 425f294a63712b402ca9d3c4fcc35a6bcfd65f30
+
     </application>
 
 </manifest>
