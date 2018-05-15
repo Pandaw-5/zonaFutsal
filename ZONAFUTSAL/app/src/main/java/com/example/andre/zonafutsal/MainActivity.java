@@ -15,6 +15,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
@@ -29,6 +30,10 @@ public class MainActivity extends AppCompatActivity
     public static final String my_shared_preferences = "my_shared_preferences";
     public static final String session_status = "session_status";
 
+    public Button detail1;
+    public Button detail2;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,6 +41,23 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        detail2 = (Button) findViewById(R.id.detail2);
+        detail2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(MainActivity.this, DetailLapanganActivity.class);
+                startActivity(Intent);
+            }
+        });
+
+        detail1 = (Button) findViewById(R.id.detail1);
+        detail1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(MainActivity.this, DetailLapanganActivity.class);
+                startActivity(Intent);
+            }
+        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
