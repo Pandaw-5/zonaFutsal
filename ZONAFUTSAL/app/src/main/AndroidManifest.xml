@@ -29,7 +29,7 @@
             android:label="Pesan"/>
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main"
+            android:label="Beranda"
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity
             android:name=".DaftarActivity"
@@ -38,7 +38,6 @@
             android:name=".TampilanPasKlikDetailLap"
             android:label="@string/title_activity_tampilan_pas_klik_detail_lap"
             android:theme="@style/AppTheme.NoActionBar" />
-        <activity android:name=".DetailLapangan2Activity" />
 
         <activity android:name=".InfoProfilMember" />
         <activity android:name=".JadwalPesanLapanganActivity"

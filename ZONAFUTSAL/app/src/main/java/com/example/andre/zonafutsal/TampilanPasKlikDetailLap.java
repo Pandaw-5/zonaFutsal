@@ -31,7 +31,7 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
         detail2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Intent = new Intent(TampilanPasKlikDetailLap.this, DetailLapangan2Activity.class);
+                Intent Intent = new Intent(TampilanPasKlikDetailLap.this, DetailLapanganActivity.class);
                 startActivity(Intent);
             }
         });
@@ -96,7 +96,7 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
         if (id == R.id.beranda) {
             Intent i =new Intent(getApplicationContext(),MainActivity.class);  startActivity(i);
         } else if (id == R.id.masuk) {
-            Intent i =new Intent(getApplicationContext(),DetailLapangan2Activity.class);  startActivity(i);
+            Intent i =new Intent(getApplicationContext(),DetailLapanganActivity.class);  startActivity(i);
         } else if (id == R.id.keluar) {
             Intent i =new Intent(getApplicationContext(),SplashScreen.class);  startActivity(i);
         }
