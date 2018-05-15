@@ -1,6 +1,8 @@
 package com.example.andre.zonafutsal;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -16,6 +18,16 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+
+    public final static String TAG_USERNAME = "nohp";
+    public final static String TAG_ID = "id";
+
+    SharedPreferences sharedpreferences;
+    Boolean session = false;
+    String id, nohp;
+
+    public static final String my_shared_preferences = "my_shared_preferences";
+    public static final String session_status = "session_status";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +45,19 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+        session = sharedpreferences.getBoolean(session_status, false);
+        id = sharedpreferences.getString(TAG_ID, null);
+        nohp = sharedpreferences.getString(TAG_USERNAME, null);
+
+        if (session) {
+            Intent intent = new Intent(getApplicationContext(), TampilanPasKlikDetailLap.class);
+            intent.putExtra(TAG_ID, id);
+            intent.putExtra(TAG_USERNAME, nohp);
+            finish();
+            startActivity(intent);
+        }
     }
 
     @Override

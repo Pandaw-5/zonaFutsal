@@ -213,12 +213,5 @@ public class DaftarActivity extends AppCompatActivity{
             pDialog.dismiss();
     }
 
-    @Override
-    public void onBackPressed() {
-        intent = new Intent(DaftarActivity.this, MasukActivity.class);
-        finish();
-        startActivity(intent);
-    }
-
 }
 
