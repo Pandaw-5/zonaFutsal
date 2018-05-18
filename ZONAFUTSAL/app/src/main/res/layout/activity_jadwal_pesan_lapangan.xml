@@ -22,7 +22,6 @@
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="#2ecc71"
         android:entries="@array/android_dropdown_arrays"
         android:padding="5dp"
         android:visibility="visible"
