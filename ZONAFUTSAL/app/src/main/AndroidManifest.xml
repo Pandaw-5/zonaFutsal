@@ -25,12 +25,13 @@
             android:name=".MasukActivity"
             android:label="@string/title_activity_masuk" />
         <activity android:name=".DetailLapanganActivity" />
-        <activity android:name=".PesanActivity"
-            android:label="Pesan"/>
+        <activity
+            android:name=".PesanActivity"
+            android:label="Pesan" />
         <activity
             android:name=".MainActivity"
             android:label="Beranda"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DaftarActivity"
             android:label="@string/title_activity_daftar" />
@@ -38,11 +39,12 @@
             android:name=".TampilanPasKlikDetailLap"
             android:label="@string/title_activity_tampilan_pas_klik_detail_lap"
             android:theme="@style/AppTheme.NoActionBar" />
-
         <activity android:name=".InfoProfilMember" />
-        <activity android:name=".JadwalPesanLapanganActivity"
-            android:label="Jadwal List Pemesana Lapangan"/>
-
+        <activity
+            android:name=".JadwalPesanLapanganActivity"
+            android:label="Jadwal List Pemesana Lapangan" />
+        <activity android:name=".VerificationActivity"
+            android:label="Verifikasi Nomer"/>
     </application>
 
 </manifest>
