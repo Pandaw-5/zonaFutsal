@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "611575490499",
+    "firebase_url": "https://zonafutsal-d3592.firebaseio.com",
+    "project_id": "zonafutsal-d3592",
+    "storage_bucket": "zonafutsal-d3592.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:611575490499:android:3ab7e7531a2f9186",
+        "android_client_info": {
+          "package_name": "com.example.andre.zonafutsal"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "611575490499-sr59m239ftj67hg5ebsf35ir58ar1jao.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.andre.zonafutsal",
+            "certificate_hash": "b55a5fec4531604c4d8dc50227fa105b94ab94e7"
+          }
+        },
+        {
+          "client_id": "611575490499-tg3l91a01fj9983rkns5fs0nlvi08j31.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDf5N4oKDffzmimf0eHVfok06jm8qeqvik"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "611575490499-tg3l91a01fj9983rkns5fs0nlvi08j31.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

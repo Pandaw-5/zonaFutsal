@@ -88,7 +88,10 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Intent a = new Intent(Intent.ACTION_MAIN);
+            a.addCategory(Intent.CATEGORY_HOME);
+            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(a);
         }
     }
 
@@ -125,7 +128,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.masuk) {
             Intent i =new Intent(getApplicationContext(),MasukActivity.class);  startActivity(i);
         } else if (id == R.id.daftar) {
-            Intent i =new Intent(getApplicationContext(),DaftarActivity.class);  startActivity(i);
+            Intent i =new Intent(getApplicationContext(),VerificationActivity.class);  startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -6,6 +6,7 @@ import android.annotation.TargetApi;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.net.ConnectivityManager;
 import android.support.annotation.NonNull;
@@ -57,7 +58,7 @@ import static android.Manifest.permission.READ_CONTACTS;
 public class DaftarActivity extends AppCompatActivity{
     ProgressDialog pDialog;
     Button btn_register, btn_login;
-    EditText txt_nohp, txt_password, txt_confirm_password, txt_nama, txt_alamat;
+    EditText txt_password, txt_confirm_password, txt_nama, txt_alamat;
     Intent intent;
 
     int success;
@@ -69,8 +70,18 @@ public class DaftarActivity extends AppCompatActivity{
 
     private static final String TAG_SUCCESS = "success";
     private static final String TAG_MESSAGE = "message";
+    public final static String TAG_USERNAME = "nohp";
+    public final static String TAG_ID = "id";
+
+    SharedPreferences sharedpreferences;
 
     String tag_json_obj = "json_obj_req";
+
+    Boolean session = false;
+    String id, nohp;
+
+    public static final String my_shared_preferences = "my_shared_preferences";
+    public static final String session_status = "session_status";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,11 +101,23 @@ public class DaftarActivity extends AppCompatActivity{
 
         //btn_login = (Button) findViewById(R.id.btn_login);
         btn_register = (Button) findViewById(R.id.btn_daftar);
-        txt_nohp = (EditText) findViewById(R.id.nomor);
         txt_password = (EditText) findViewById(R.id.password);
         txt_confirm_password = (EditText) findViewById(R.id.conPassword);
         txt_nama = (EditText) findViewById(R.id.nama);
         txt_alamat = (EditText) findViewById(R.id.alamat);
+
+        sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+        session = sharedpreferences.getBoolean(session_status, false);
+        id = sharedpreferences.getString(TAG_ID, null);
+        nohp = sharedpreferences.getString(TAG_USERNAME, null);
+
+        if (session) {
+            Intent intent = new Intent(getApplicationContext(), TampilanPasKlikDetailLap.class);
+            intent.putExtra(TAG_ID, id);
+            intent.putExtra(TAG_USERNAME, nohp);
+            finish();
+            startActivity(intent);
+        }
 
       //  btn_login.setOnClickListener(new View.OnClickListener() {
 
@@ -112,7 +135,7 @@ public class DaftarActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                String nohp = txt_nohp.getText().toString();
+                String nohp = getIntent().getStringExtra("no.hp");
                 String password = txt_password.getText().toString();
                 String confirm_password = txt_confirm_password.getText().toString();
                 String nama = txt_nama.getText().toString();
@@ -149,17 +172,33 @@ public class DaftarActivity extends AppCompatActivity{
 
                     // Check for error node in json
                     if (success == 1) {
+                        String nohp = jObj.getString(TAG_USERNAME);
+                        String id = jObj.getString(TAG_ID);
 
                         Log.e("Successfully Register!", jObj.toString());
 
                         Toast.makeText(getApplicationContext(),
                                 jObj.getString(TAG_MESSAGE), Toast.LENGTH_LONG).show();
 
-                        txt_nohp.setText("");
                         txt_password.setText("");
                         txt_confirm_password.setText("");
                         txt_nama.setText("");
                         txt_alamat.setText("");
+
+                        // menyimpan login ke session
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
+                        editor.putBoolean(session_status, true);
+                        editor.putString(TAG_ID, id);
+                        editor.putString(TAG_USERNAME, nohp);
+                        editor.commit();
+
+
+                        // Memanggil main activity
+                        Intent intent = new Intent(getApplicationContext(), TampilanPasKlikDetailLap.class);
+                        intent.putExtra(TAG_ID, id);
+                        intent.putExtra(TAG_USERNAME, nohp);
+                        finish();
+                        startActivity(intent);
 
                     } else {
                         Toast.makeText(getApplicationContext(),
@@ -213,5 +252,11 @@ public class DaftarActivity extends AppCompatActivity{
             pDialog.dismiss();
     }
 
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        Intent v = new Intent(getApplicationContext(), MainActivity.class);
+        startActivity(v);
+    }
 }
 
