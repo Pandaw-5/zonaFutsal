@@ -3,6 +3,7 @@ package com.example.andre.zonafutsal;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.content.Intent;
+import android.content.OperationApplicationException;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MotionEvent;
@@ -14,22 +15,21 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
+import android.widget.RadioGroup.OnCheckedChangeListener;
 
 import java.util.Calendar;
 
-public class JadwalPesanLapanganActivity extends AppCompatActivity {
-    private RadioGroup radioGroupNb;
-    private RadioButton radioButtonNb;
-    private Button btnPsn;
+public class JadwalPesanLapanganActivity extends AppCompatActivity implements OnCheckedChangeListener {
+    RadioButton rb1, rb2, rb3, rb4;
+    RadioGroup rg;
 
     int hour, minute, mYear, mMonth, mDay;
 
-    static final int TIME_DIALOG_ID = 0;
     static final int DATE_DIALOG_ID = 1;
-    private EditText txtDate;
+    private TextView txtDate;
     private String[] arrMonth = {"Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"};
-
 
     private Spinner spinner1;
 
@@ -37,32 +37,15 @@ public class JadwalPesanLapanganActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jadwal_pesan_lapangan);
-        radioGroupNb = (RadioGroup) findViewById(R.id.radioGroupNb);
-        btnPsn = (Button) findViewById(R.id.btnPesan);
-        addListenerOnButtonJawab();
-    }
 
-    public void addListenerOnButtonJawab() {
+            rg = (RadioGroup)findViewById(R.id.radioGroupJam);
+            rb1 = (RadioButton)findViewById(R.id.radioPilih1);
+            rb2 = (RadioButton)findViewById(R.id.radioPilih2);
+            rb3 = (RadioButton)findViewById(R.id.radioPilih3);
+            rb4 = (RadioButton)findViewById(R.id.radioPilih4);
+            rg.setOnCheckedChangeListener(this);
 
-        btnPsn.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View v) {
-                //pilih radio button yang ada di radio button group
-                int selectedId = radioGroupNb.getCheckedRadioButtonId();
-
-                // mencari radio button
-                radioButtonNb = (RadioButton) findViewById(selectedId);
-                //menampilkan pesan teks / toast
-                Toast.makeText(getBaseContext(),
-                        "Kamu Memilih Notebook " + radioButtonNb.getText(),
-                        Toast.LENGTH_SHORT).show();
-                Intent il = new Intent(getApplicationContext(),PesanActivity.class);
-                startActivity(il);
-            }
-        });
-
-        txtDate = (EditText) findViewById(R.id.txtDate);
+        txtDate = (TextView) findViewById(R.id.txtDate);
         // get the current date
         final Calendar c = Calendar.getInstance();
         mYear = c.get(Calendar.YEAR);
@@ -130,5 +113,8 @@ public class JadwalPesanLapanganActivity extends AppCompatActivity {
             sret = spad + sret;
         }
         return new String(sret);
+    }
+    public void onCheckedChanged(RadioGroup group,
+                                 int checkedId) {
     }
 }

@@ -1,6 +1,8 @@
 package com.example.andre.zonafutsal;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -18,8 +20,19 @@ import android.widget.Button;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
 
+    public final static String TAG_USERNAME = "nohp";
+    public final static String TAG_ID = "id";
+
+    SharedPreferences sharedpreferences;
+    Boolean session = false;
+    String id, nohp;
+
+    public static final String my_shared_preferences = "my_shared_preferences";
+    public static final String session_status = "session_status";
+
     public Button detail1;
     public Button detail2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +67,19 @@ public class MainActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+        session = sharedpreferences.getBoolean(session_status, false);
+        id = sharedpreferences.getString(TAG_ID, null);
+        nohp = sharedpreferences.getString(TAG_USERNAME, null);
+
+        if (session) {
+            Intent intent = new Intent(getApplicationContext(), TampilanPasKlikDetailLap.class);
+            intent.putExtra(TAG_ID, id);
+            intent.putExtra(TAG_USERNAME, nohp);
+            finish();
+            startActivity(intent);
+        }
     }
 
     @Override
@@ -62,7 +88,10 @@ public class MainActivity extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Intent a = new Intent(Intent.ACTION_MAIN);
+            a.addCategory(Intent.CATEGORY_HOME);
+            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(a);
         }
     }
 
@@ -99,7 +128,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.masuk) {
             Intent i =new Intent(getApplicationContext(),MasukActivity.class);  startActivity(i);
         } else if (id == R.id.daftar) {
-            Intent i =new Intent(getApplicationContext(),DaftarActivity.class);  startActivity(i);
+            Intent i =new Intent(getApplicationContext(),VerificationActivity.class);  startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

@@ -1,6 +1,8 @@
 package com.example.andre.zonafutsal;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -19,6 +21,9 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
     public Button detail2;
     public Button detail1;
+    public static final String TAG_ID = "id";
+    public static final String TAG_USERNAME = "username";
+    SharedPreferences sharedpreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +31,8 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
         setContentView(R.layout.activity_tampilan_pas_klik_detail_lap);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        sharedpreferences = getSharedPreferences(MasukActivity.my_shared_preferences, Context.MODE_PRIVATE);
 
         detail2 = (Button) findViewById(R.id.detail2);
         detail2.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +68,10 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Intent a = new Intent(Intent.ACTION_MAIN);
+            a.addCategory(Intent.CATEGORY_HOME);
+            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(a);
         }
     }
 
@@ -94,11 +104,25 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.beranda) {
+<<<<<<< HEAD
             Intent i =new Intent(getApplicationContext(),MainActivity.class);  startActivity(i);
         } else if (id == R.id.masuk) {
             Intent i =new Intent(getApplicationContext(),DaftarActivity.class);  startActivity(i);
         } else if (id == R.id.keluar) {
             Intent i =new Intent(getApplicationContext(),MainActivity.class);  startActivity(i);
+=======
+            Intent i =new Intent(getApplicationContext(),TampilanPasKlikDetailLap.class);  startActivity(i);
+        }  else if (id == R.id.keluar) {
+                    SharedPreferences.Editor editor = sharedpreferences.edit();
+                    editor.putBoolean(MasukActivity.session_status, false);
+                    editor.putString(TAG_ID, null);
+                    editor.putString(TAG_USERNAME, null);
+                    editor.commit();
+
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    finish();
+                    startActivity(intent);
+>>>>>>> ed7ebb29bbafa78939a34206d59c5902b0dc4572
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
