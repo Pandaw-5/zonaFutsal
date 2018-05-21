@@ -96,9 +96,9 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
         if (id == R.id.beranda) {
             Intent i =new Intent(getApplicationContext(),MainActivity.class);  startActivity(i);
         } else if (id == R.id.masuk) {
-            Intent i =new Intent(getApplicationContext(),DetailLapanganActivity.class);  startActivity(i);
+            Intent i =new Intent(getApplicationContext(),DaftarActivity.class);  startActivity(i);
         } else if (id == R.id.keluar) {
-            Intent i =new Intent(getApplicationContext(),SplashScreen.class);  startActivity(i);
+            Intent i =new Intent(getApplicationContext(),MainActivity.class);  startActivity(i);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
