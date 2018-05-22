@@ -9,10 +9,6 @@
             android:icon="@drawable/beranda"
             android:title="Beranda" />
         <item
-            android:id="@+id/masuk"
-            android:icon="@drawable/masuk"
-            android:title="Masuk" />
-        <item
             android:id="@+id/keluar"
             android:icon="@drawable/keluar"
             android:title="Keluar" />

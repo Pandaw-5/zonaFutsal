@@ -111,7 +111,7 @@ public class MasukActivity extends AppCompatActivity{
         nohp = sharedpreferences.getString(TAG_USERNAME, null);
 
         if (session) {
-            Intent intent = new Intent(MasukActivity.this, MainActivity.class);
+            Intent intent = new Intent(getApplicationContext(), TampilanPasKlikDetailLap.class);
             intent.putExtra(TAG_ID, id);
             intent.putExtra(TAG_USERNAME, nohp);
             finish();
@@ -148,7 +148,7 @@ public class MasukActivity extends AppCompatActivity{
             @Override
             public void onClick(View v) {
                 // TODO Auto-generated method stub
-                intent = new Intent(MasukActivity.this, DaftarActivity.class);
+                intent = new Intent(MasukActivity.this, VerificationActivity.class);
                 finish();
                 startActivity(intent);
             }

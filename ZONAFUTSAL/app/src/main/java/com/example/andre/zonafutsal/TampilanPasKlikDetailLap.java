@@ -68,7 +68,10 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
         } else {
-            super.onBackPressed();
+            Intent a = new Intent(Intent.ACTION_MAIN);
+            a.addCategory(Intent.CATEGORY_HOME);
+            a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(a);
         }
     }
 
@@ -101,10 +104,15 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.beranda) {
+<<<<<<< HEAD
             Intent i =new Intent(getApplicationContext(),MainActivity.class);  startActivity(i);
         } else if (id == R.id.masuk) {
-            Intent i =new Intent(getApplicationContext(),DetailLapanganActivity.class);  startActivity(i);
+            Intent i =new Intent(getApplicationContext(),DaftarActivity.class);  startActivity(i);
         } else if (id == R.id.keluar) {
+            Intent i =new Intent(getApplicationContext(),MainActivity.class);  startActivity(i);
+=======
+            Intent i =new Intent(getApplicationContext(),TampilanPasKlikDetailLap.class);  startActivity(i);
+        }  else if (id == R.id.keluar) {
                     SharedPreferences.Editor editor = sharedpreferences.edit();
                     editor.putBoolean(MasukActivity.session_status, false);
                     editor.putString(TAG_ID, null);
@@ -114,6 +122,7 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     finish();
                     startActivity(intent);
+>>>>>>> ed7ebb29bbafa78939a34206d59c5902b0dc4572
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
