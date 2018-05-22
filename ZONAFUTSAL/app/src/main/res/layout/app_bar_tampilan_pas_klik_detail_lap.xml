@@ -16,11 +16,13 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
+            android:background="@android:color/background_light"
             app:popupTheme="@style/AppTheme.PopupOverlay" />
 
     </android.support.design.widget.AppBarLayout>
 
-    <include layout="@layout/content_tampilan_pas_klik_detail_lap" />
+    <include
+        layout="@layout/content_tampilan_pas_klik_detail_lap"
+        android:visibility="visible" />
 
 </android.support.design.widget.CoordinatorLayout>
