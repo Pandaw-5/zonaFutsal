@@ -56,7 +56,7 @@
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="title_activity_daftar">Sign in</string>
     <string name="nama">hint</string>
-    <string name="title_activity_tampilan_pas_klik_detail_lap">TampilanPasKlikDetailLap</string>
+    <string name="title_activity_tampilan_pas_klik_detail_lap">Beranda</string>
     <string name="title_activity_main">MainActivity</string>
 
     <string-array name="android_dropdown_arrays">

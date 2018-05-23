@@ -22,17 +22,16 @@ public class MainActivity extends AppCompatActivity
 
     public final static String TAG_USERNAME = "nohp";
     public final static String TAG_ID = "id";
+    public final static String TAG_NAMA = "nama";
 
     SharedPreferences sharedpreferences;
     Boolean session = false;
-    String id, nohp;
+    String id, nohp, nama;
 
     public static final String my_shared_preferences = "my_shared_preferences";
     public static final String session_status = "session_status";
 
-    public Button detail1;
-    public Button detail2;
-
+    public Button detail1, detail2, detail3, detail4, detail5, detail6, detail7;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,20 +40,72 @@ public class MainActivity extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        detail2 = (Button) findViewById(R.id.detail2);
-        detail2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent Intent = new Intent(MainActivity.this, DetailLapanganActivity.class);
-                startActivity(Intent);
-            }
-        });
-
         detail1 = (Button) findViewById(R.id.detail1);
         detail1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent Intent = new Intent(MainActivity.this, DetailLapanganActivity.class);
+                Intent Intent = new Intent(getApplicationContext(), DetailLapanganActivity.class);
+                Intent.putExtra("id", "lap1");
+                startActivity(Intent);
+            }
+        });
+
+        detail2 = (Button) findViewById(R.id.detail2);
+        detail2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(getApplicationContext(), DetailLapanganActivity.class);
+                Intent.putExtra("id", "lap2");
+                startActivity(Intent);
+            }
+        });
+
+        detail3 = (Button) findViewById(R.id.detail3);
+        detail3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(getApplicationContext(), DetailLapanganActivity.class);
+                Intent.putExtra("id", "lap3");
+                startActivity(Intent);
+            }
+        });
+
+        detail4 = (Button) findViewById(R.id.detail4);
+        detail4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(getApplicationContext(), DetailLapanganActivity.class);
+                Intent.putExtra("id", "lap4");
+                startActivity(Intent);
+            }
+        });
+
+        detail5 = (Button) findViewById(R.id.detail5);
+        detail5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(getApplicationContext(), DetailLapanganActivity.class);
+                Intent.putExtra("id", "lap5");
+                startActivity(Intent);
+            }
+        });
+
+        detail6 = (Button) findViewById(R.id.detail6);
+        detail6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(getApplicationContext(), DetailLapanganActivity.class);
+                Intent.putExtra("id", "lap6");
+                startActivity(Intent);
+            }
+        });
+
+        detail7 = (Button) findViewById(R.id.detail7);
+        detail7.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent Intent = new Intent(getApplicationContext(), DetailLapanganActivity.class);
+                Intent.putExtra("id", "lap7");
                 startActivity(Intent);
             }
         });
@@ -72,11 +123,13 @@ public class MainActivity extends AppCompatActivity
         session = sharedpreferences.getBoolean(session_status, false);
         id = sharedpreferences.getString(TAG_ID, null);
         nohp = sharedpreferences.getString(TAG_USERNAME, null);
+        nama = sharedpreferences.getString(TAG_NAMA, null);
 
         if (session) {
             Intent intent = new Intent(getApplicationContext(), TampilanPasKlikDetailLap.class);
             intent.putExtra(TAG_ID, id);
             intent.putExtra(TAG_USERNAME, nohp);
+            intent.putExtra(TAG_NAMA, nama);
             finish();
             startActivity(intent);
         }

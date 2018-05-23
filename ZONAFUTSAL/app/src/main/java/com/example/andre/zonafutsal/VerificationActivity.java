@@ -65,9 +65,10 @@ public class VerificationActivity extends AppCompatActivity implements
 
     public final static String TAG_USERNAME = "nohp";
     public final static String TAG_ID = "id";
+    public final static String TAG_NAMA = "nama";
     SharedPreferences sharedpreferences;
     Boolean session = false;
-    String id, nohp;
+    String id, nohp, nama;
     public static final String my_shared_preferences = "my_shared_preferences";
     public static final String session_status = "session_status";
 
@@ -81,11 +82,13 @@ public class VerificationActivity extends AppCompatActivity implements
         session = sharedpreferences.getBoolean(session_status, false);
         id = sharedpreferences.getString(TAG_ID, null);
         nohp = sharedpreferences.getString(TAG_USERNAME, null);
+        nama = sharedpreferences.getString(TAG_NAMA, null);
 
         if (session) {
             Intent intent = new Intent(getApplicationContext(), TampilanPasKlikDetailLap.class);
             intent.putExtra(TAG_ID, id);
             intent.putExtra(TAG_USERNAME, nohp);
+            intent.putExtra(TAG_NAMA, nama);
             finish();
             startActivity(intent);
         }
@@ -263,9 +266,7 @@ public class VerificationActivity extends AppCompatActivity implements
                             Log.d(TAG, "signInWithCredential:success");
 
                             FirebaseUser user = task.getResult().getUser();
-                            // [START_EXCLUDE]
-                            updateUI(STATE_SIGNIN_SUCCESS, user);
-                            // [END_EXCLUDE]
+
                         } else {
                             // Sign in failed, display a message and update the UI
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
@@ -283,12 +284,6 @@ public class VerificationActivity extends AppCompatActivity implements
                     }
                 });
     }
-    // [END sign_in_with_phone]
-
-//    private void signOut() {
-//        mAuth.signOut();
-//        updateUI(STATE_INITIALIZED);
-//    }
 
     private void updateUI(int uiState) {
         updateUI(uiState, mAuth.getCurrentUser(), null);
@@ -352,6 +347,7 @@ public class VerificationActivity extends AppCompatActivity implements
                 break;
             case STATE_SIGNIN_FAILED:
                 // No-op, handled by sign-in check
+
                 break;
             case STATE_SIGNIN_SUCCESS:
                 // Np-op, handled by sign-in check
@@ -369,6 +365,10 @@ public class VerificationActivity extends AppCompatActivity implements
             mVerificationField.setText(null);
 
 
+        } else if (uiState == STATE_VERIFY_SUCCESS){
+            Intent v = new Intent(getApplicationContext(), DaftarActivity.class);
+            v.putExtra("no.hp", mPhoneNumberField.getText().toString());
+            startActivity(v);
         } else {
             // Signed out
             mPhoneNumberViews.setVisibility(View.VISIBLE);

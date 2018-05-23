@@ -72,13 +72,14 @@ public class DaftarActivity extends AppCompatActivity{
     private static final String TAG_MESSAGE = "message";
     public final static String TAG_USERNAME = "nohp";
     public final static String TAG_ID = "id";
+    public final static String TAG_NAMA = "nama";
 
     SharedPreferences sharedpreferences;
 
     String tag_json_obj = "json_obj_req";
 
     Boolean session = false;
-    String id, nohp;
+    String id, nohp, nama;
 
     public static final String my_shared_preferences = "my_shared_preferences";
     public static final String session_status = "session_status";
@@ -110,11 +111,13 @@ public class DaftarActivity extends AppCompatActivity{
         session = sharedpreferences.getBoolean(session_status, false);
         id = sharedpreferences.getString(TAG_ID, null);
         nohp = sharedpreferences.getString(TAG_USERNAME, null);
+        nama = sharedpreferences.getString(TAG_NAMA, null);
 
         if (session) {
             Intent intent = new Intent(getApplicationContext(), TampilanPasKlikDetailLap.class);
             intent.putExtra(TAG_ID, id);
             intent.putExtra(TAG_USERNAME, nohp);
+            intent.putExtra(TAG_NAMA, nama);
             finish();
             startActivity(intent);
         }
@@ -174,6 +177,7 @@ public class DaftarActivity extends AppCompatActivity{
                     if (success == 1) {
                         String nohp = jObj.getString(TAG_USERNAME);
                         String id = jObj.getString(TAG_ID);
+                        String nama = jObj.getString(TAG_NAMA);
 
                         Log.e("Successfully Register!", jObj.toString());
 
@@ -190,6 +194,7 @@ public class DaftarActivity extends AppCompatActivity{
                         editor.putBoolean(session_status, true);
                         editor.putString(TAG_ID, id);
                         editor.putString(TAG_USERNAME, nohp);
+                        editor.putString(TAG_NAMA, nama);
                         editor.commit();
 
 
@@ -197,6 +202,7 @@ public class DaftarActivity extends AppCompatActivity{
                         Intent intent = new Intent(getApplicationContext(), TampilanPasKlikDetailLap.class);
                         intent.putExtra(TAG_ID, id);
                         intent.putExtra(TAG_USERNAME, nohp);
+                        intent.putExtra(TAG_NAMA, nama);
                         finish();
                         startActivity(intent);
 
