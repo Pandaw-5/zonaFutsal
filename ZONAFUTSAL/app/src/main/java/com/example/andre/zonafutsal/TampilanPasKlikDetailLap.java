@@ -104,14 +104,13 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.beranda) {
-<<<<<<< HEAD
+
             Intent i =new Intent(getApplicationContext(),MainActivity.class);  startActivity(i);
         } else if (id == R.id.masuk) {
             Intent i =new Intent(getApplicationContext(),DaftarActivity.class);  startActivity(i);
         } else if (id == R.id.keluar) {
             Intent i =new Intent(getApplicationContext(),MainActivity.class);  startActivity(i);
-=======
-            Intent i =new Intent(getApplicationContext(),TampilanPasKlikDetailLap.class);  startActivity(i);
+            Intent i2 =new Intent(getApplicationContext(),TampilanPasKlikDetailLap.class);  startActivity(i2);
         }  else if (id == R.id.keluar) {
                     SharedPreferences.Editor editor = sharedpreferences.edit();
                     editor.putBoolean(MasukActivity.session_status, false);
@@ -122,7 +121,6 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     finish();
                     startActivity(intent);
->>>>>>> ed7ebb29bbafa78939a34206d59c5902b0dc4572
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
