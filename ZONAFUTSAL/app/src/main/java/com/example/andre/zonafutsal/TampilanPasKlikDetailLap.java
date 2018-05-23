@@ -172,13 +172,7 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.beranda) {
-
             Intent i =new Intent(getApplicationContext(),MainActivity.class);  startActivity(i);
-        } else if (id == R.id.masuk) {
-            Intent i =new Intent(getApplicationContext(),DaftarActivity.class);  startActivity(i);
-        } else if (id == R.id.keluar) {
-            Intent i =new Intent(getApplicationContext(),MainActivity.class);  startActivity(i);
-            Intent i2 =new Intent(getApplicationContext(),TampilanPasKlikDetailLap.class);  startActivity(i2);
         }  else if (id == R.id.keluar) {
                     SharedPreferences.Editor editor = sharedpreferences.edit();
                     editor.putBoolean(MasukActivity.session_status, false);
