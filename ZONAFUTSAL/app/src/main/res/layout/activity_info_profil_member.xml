@@ -4,8 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+<<<<<<< HEAD
     tools:context=".InfoProfilMember"
     tools:layout_editor_absoluteY="81dp">
+=======
+    android:background="@drawable/bckgrnd_andrd"
+    tools:context=".InfoProfilMember">
+>>>>>>> f5c9856f449d883852d6c2feb4530e7768a9d346
 
     <ImageView
         android:id="@+id/imageView3"

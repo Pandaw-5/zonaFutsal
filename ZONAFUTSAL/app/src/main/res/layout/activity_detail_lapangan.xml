@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/holo_green_light"
+    android:background="@drawable/bckgrnd"
     tools:context=".DetailLapanganActivity">
 
     <TextView
@@ -41,7 +41,54 @@
         app:layout_constraintHorizontal_bias="0.509"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+<<<<<<< HEAD
         android:src="@drawable/lap1"
+=======
+        app:srcCompat="@drawable/lap1"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:layout_marginBottom="100dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginLeft="65dp"
+        android:layout_marginRight="250dp"
+        android:layout_marginStart="65dp"
+        android:layout_marginTop="90dp"
+        android:text="Keterangan"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="83dp"
+        android:layout_height="14dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="250dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="250dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="100dp"
+        android:text="................."
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:typeface="monospace"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.285"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.465"
+>>>>>>> f5c9856f449d883852d6c2feb4530e7768a9d346
         tools:ignore="MissingConstraints" />
 
     <Button
