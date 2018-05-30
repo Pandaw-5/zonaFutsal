@@ -3,6 +3,7 @@ package com.example.andre.zonafutsal;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -34,15 +35,21 @@ public class InfoProfilMember extends AppCompatActivity {
 
     ProgressDialog pDialog;
     private String id;
+    int success;
     private ImageView gambar;
     private String url = Server.URL + "infoMember.php";
     private String url2 = Server.URL + "editInfoMember.php";
 
+    SharedPreferences sharedpreferences;
+
     private static final String TAG = DetailLapanganActivity.class.getSimpleName();
 
+    private static final String TAG_SUCCESS = "success";
     public final static String TAG_NAMA = "nama";
     public final static String TAG_ALAMAT = "alamat";
     public final static String TAG_NOHP = "nohp";
+    public static final String my_shared_preferences = "my_shared_preferences";
+    public static final String TAG_ID = "id";
 
     String tag_json_obj = "json_obj_req";
     ConnectivityManager conMgr;
@@ -68,11 +75,46 @@ public class InfoProfilMember extends AppCompatActivity {
         mAlamat = findViewById(R.id.user_alamat1);
         mNohp = findViewById(R.id.user_nohp1);
 
-        edit = findViewById(R.id.button);
+        edit = findViewById(R.id.ngedit);
         batal = findViewById(R.id.Batal);
         simpan = findViewById(R.id.edit);
 
-        id = getIntent().getStringExtra("id");
+        sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+        id = sharedpreferences.getString(TAG_ID, null);
+
+        edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateUI("EDIT");
+            }
+        });
+
+        batal.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                updateUI("BATAL");
+            }
+        });
+
+        simpan.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nama = mNama.getText().toString();
+                String alamat = mAlamat.getText().toString();
+                String nohp = mNohp.getText().toString();
+                conMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+                {
+                    if (conMgr.getActiveNetworkInfo() != null
+                            && conMgr.getActiveNetworkInfo().isAvailable()
+                            && conMgr.getActiveNetworkInfo().isConnected()) {
+                        simpan(id, nama, alamat, nohp);
+                    } else {
+                        Toast.makeText(getApplicationContext(), "No Internet Connection",
+                                Toast.LENGTH_LONG).show();
+                    }
+                }
+            }
+        });
 
         conMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         {
@@ -90,7 +132,7 @@ public class InfoProfilMember extends AppCompatActivity {
     private void tampilData(final String id) {
         pDialog = new ProgressDialog(this);
         pDialog.setCancelable(false);
-        pDialog.setMessage("Get Data ...");
+        pDialog.setMessage("Mengambil Data ...");
         showDialog();
 
         StringRequest strReq = new StringRequest(Request.Method.POST, url, new Response.Listener<String>() {
@@ -158,6 +200,8 @@ public class InfoProfilMember extends AppCompatActivity {
 
                 try {
                     JSONObject jObj = new JSONObject(response);
+                    success = jObj.getInt(TAG_SUCCESS);
+                    if(success == 1){
 
                     String nama = jObj.getString(TAG_NAMA);
                     String alamat = jObj.getString(TAG_ALAMAT);
@@ -167,8 +211,12 @@ public class InfoProfilMember extends AppCompatActivity {
                     txt_alamat.setText(alamat);
                     txt_nohp.setText(nohp);
 
+                    updateUI("BATAL");
+
                     Log.e("Successfully Get Data!", jObj.toString());
 
+
+                    }
                 } catch (JSONException e) {
                     // JSON error
                     e.printStackTrace();
@@ -217,9 +265,9 @@ public class InfoProfilMember extends AppCompatActivity {
                 // Initialized state, show only the phone number field and start button
                 one.setVisibility(View.GONE);
                 two.setVisibility(View.VISIBLE);
-                mNama.setText(txt_nama.getText());
-                mAlamat.setText(txt_alamat.getText());
-                mNohp.setText(txt_nohp.getText());
+                mNama.setText(txt_nama.getText().toString());
+                mAlamat.setText(txt_alamat.getText().toString());
+                mNohp.setText(txt_nohp.getText().toString());
 
                 break;
             case "BATAL":
@@ -227,34 +275,6 @@ public class InfoProfilMember extends AppCompatActivity {
                 one.setVisibility(View.VISIBLE);
                 two.setVisibility(View.GONE);
 
-                break;
-        }
-    }
-
-    public void onClick(View view) {
-        switch (view.getId()) {
-            case R.id.button:
-                updateUI("EDIT");
-                break;
-            case R.id.edit:
-                String nama = mNama.getText().toString();
-                String alamat = mAlamat.getText().toString();
-                String nohp = mNohp.getText().toString();
-                conMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-            {
-                if (conMgr.getActiveNetworkInfo() != null
-                        && conMgr.getActiveNetworkInfo().isAvailable()
-                        && conMgr.getActiveNetworkInfo().isConnected()) {
-                    simpan(id, nama, alamat, nohp);
-                } else {
-                    Toast.makeText(getApplicationContext(), "No Internet Connection",
-                            Toast.LENGTH_LONG).show();
-                }
-            }
-
-                break;
-            case R.id.Batal:
-                updateUI("BATAL");
                 break;
         }
     }

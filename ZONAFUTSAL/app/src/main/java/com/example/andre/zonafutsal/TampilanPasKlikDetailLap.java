@@ -194,7 +194,6 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
 
     public void gambar(View view){
         Intent i =new Intent(getApplicationContext(),InfoProfilMember.class);
-        i.putExtra(TAG_ID, id);
         startActivity(i);
     }
 }

@@ -12,9 +12,7 @@
         android:id="@+id/imageView3"
         android:layout_width="134dp"
         android:layout_height="134dp"
-        android:layout_marginBottom="20dp"
         android:layout_marginTop="45dp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -28,6 +26,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:orientation="vertical"
+        android:visibility="visible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,7 +108,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/ngedit"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -120,26 +119,27 @@
             android:layout_marginTop="100dp"
             android:layout_weight="0"
             android:text="EDIT" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0"
+            android:orientation="horizontal"></LinearLayout>
     </LinearLayout>
 
     <LinearLayout
         android:id="@+id/linearLayout1"
-        android:layout_width="match_parent"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
         android:orientation="vertical"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
-        app:layout_constraintVertical_bias="0.465"
-        android:visibility="gone">
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -234,7 +234,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="0dp"
                 android:layout_weight="1"
-                android:text="EDIT" />
+                android:text="Batal" />
 
             <Button
                 android:id="@+id/edit"
@@ -247,7 +247,7 @@
                 android:layout_marginRight="8dp"
                 android:layout_marginTop="0dp"
                 android:layout_weight="1"
-                android:text="EDIT" />
+                android:text="Simpan" />
         </LinearLayout>
 
 
