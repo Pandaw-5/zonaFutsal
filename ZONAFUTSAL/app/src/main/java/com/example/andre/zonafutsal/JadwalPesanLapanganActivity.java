@@ -21,9 +21,8 @@ import android.widget.RadioGroup.OnCheckedChangeListener;
 
 import java.util.Calendar;
 
-public class JadwalPesanLapanganActivity extends AppCompatActivity implements OnCheckedChangeListener {
-    RadioButton rb1, rb2, rb3, rb4;
-    RadioGroup rg;
+public class JadwalPesanLapanganActivity extends AppCompatActivity {
+    Button btn12;
 
     int hour, minute, mYear, mMonth, mDay;
 
@@ -38,12 +37,15 @@ public class JadwalPesanLapanganActivity extends AppCompatActivity implements On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_jadwal_pesan_lapangan);
 
-            rg = (RadioGroup)findViewById(R.id.radioGroupJam);
-            rb1 = (RadioButton)findViewById(R.id.radioPilih1);
-            rb2 = (RadioButton)findViewById(R.id.radioPilih2);
-            rb3 = (RadioButton)findViewById(R.id.radioPilih3);
-            rb4 = (RadioButton)findViewById(R.id.radioPilih4);
-            rg.setOnCheckedChangeListener(this);
+            btn12 = (Button)findViewById(R.id.buttonPesan);
+
+            btn12.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(JadwalPesanLapanganActivity.this, PesanActivity.class);
+                }
+            });
+
 
         txtDate = (TextView) findViewById(R.id.txtDate);
         // get the current date
