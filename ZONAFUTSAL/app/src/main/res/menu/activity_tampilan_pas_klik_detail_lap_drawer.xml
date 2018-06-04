@@ -9,8 +9,13 @@
             android:icon="@drawable/beranda"
             android:title="Beranda" />
         <item
-            android:id="@+id/histori"
-            android:title="Beranda" />
+            android:id="@+id/riwayat"
+            android:icon="@drawable/ic_history_black"
+            android:title="Riwayat"/>
+        <item
+            android:id="@+id/pemesanan"
+            android:icon="@drawable/ic_playlist_add_black"
+            android:title="Pemesana"/>
         <item
             android:id="@+id/keluar"
             android:icon="@drawable/keluar"

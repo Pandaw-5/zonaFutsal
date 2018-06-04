@@ -184,16 +184,7 @@ public class MainActivity extends AppCompatActivity
         } else if (id == R.id.daftar) {
             Intent i =new Intent(getApplicationContext(),VerificationActivity.class);  startActivity(i);
         }
-        else if (id == R.id.riwayat) {
-            android.support.v4.app.FragmentTransaction ft =getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.berandaa,new RiwayatFragment());
-            ft.commit();
-        }
-        else if (id == R.id.pemesanan) {
-            android.support.v4.app.FragmentTransaction ft =getSupportFragmentManager().beginTransaction();
-            ft.replace(R.id.berandaa,new PemesananFragment());
-            ft.commit();
-        }
+
 
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

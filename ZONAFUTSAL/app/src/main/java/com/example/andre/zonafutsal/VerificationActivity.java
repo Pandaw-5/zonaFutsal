@@ -93,7 +93,7 @@ public class VerificationActivity extends AppCompatActivity implements
             startActivity(intent);
         }
 
-        // Restore instance state
+         // Restore instance state
         if (savedInstanceState != null) {
             onRestoreInstanceState(savedInstanceState);
         }
@@ -267,6 +267,8 @@ public class VerificationActivity extends AppCompatActivity implements
 
                             FirebaseUser user = task.getResult().getUser();
 
+                            updateUI(STATE_SIGNIN_SUCCESS, user);
+
                         } else {
                             // Sign in failed, display a message and update the UI
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
@@ -365,10 +367,12 @@ public class VerificationActivity extends AppCompatActivity implements
             mVerificationField.setText(null);
 
 
-        } else if (uiState == STATE_VERIFY_SUCCESS){
+        } else if (uiState == STATE_VERIFY_SUCCESS || uiState == STATE_SIGNIN_SUCCESS){
+            updateUI(STATE_INITIALIZED);
             Intent v = new Intent(getApplicationContext(), DaftarActivity.class);
             v.putExtra("no.hp", mPhoneNumberField.getText().toString());
             startActivity(v);
+
         } else {
             // Signed out
             mPhoneNumberViews.setVisibility(View.VISIBLE);
