@@ -184,6 +184,16 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
                     finish();
                     startActivity(intent);
         }
+        else if (id == R.id.riwayat) {
+            android.support.v4.app.FragmentTransaction ft =getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.tampilan,new RiwayatFragment());
+            ft.commit();
+        }
+        else if (id == R.id.pemesanan) {
+            android.support.v4.app.FragmentTransaction ft =getSupportFragmentManager().beginTransaction();
+            ft.replace(R.id.tampilan,new PemesananFragment());
+            ft.commit();
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);

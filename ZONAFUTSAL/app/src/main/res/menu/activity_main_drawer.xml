@@ -17,14 +17,6 @@
             android:id="@+id/daftar"
             android:icon="@drawable/ic_person_add_black"
             android:title="Daftar" />
-        <item
-            android:id="@+id/riwayat"
-            android:icon="@drawable/ic_history_black"
-            android:title="Riwayat"/>
-        <item
-            android:id="@+id/pemesanan"
-            android:icon="@drawable/ic_playlist_add_black"
-            android:title="Pemesana"/>
     </group>
 
 </menu>

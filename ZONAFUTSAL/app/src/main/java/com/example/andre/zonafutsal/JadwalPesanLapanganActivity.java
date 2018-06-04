@@ -43,6 +43,7 @@ public class JadwalPesanLapanganActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent(JadwalPesanLapanganActivity.this, PesanActivity.class);
+                    startActivity(intent);
                 }
             });
 
