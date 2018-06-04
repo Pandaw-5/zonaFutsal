@@ -29,14 +29,16 @@ import java.util.Map;
 
 public class DetailLapanganActivity extends AppCompatActivity {
 
-    private String id;
+    private String id, nama_lapangan, keterangan;
     private ImageView gambar;
     private String url = Server.URL + "tampilLapangan.php";
 
     private static final String TAG = DetailLapanganActivity.class.getSimpleName();
+    SharedPreferences sharedpreferences;
 
     public final static String TAG_LAPANGAN = "nama_lapangan";
     public final static String TAG_KETERANGAN = "keterangan";
+    public static final String my_shared_preferences = "my_shared_lapangan";
 
     String tag_json_obj = "json_obj_req";
     ConnectivityManager conMgr;
@@ -55,28 +57,58 @@ public class DetailLapanganActivity extends AppCompatActivity {
         txt_view2 = findViewById(R.id.textView6);
         id = getIntent().getStringExtra("id");
         gambar = findViewById(R.id.imageView2);
+        sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
+
 
         switch(id){
             case "lap1":
                 gambar.setImageResource(R.drawable.lap1);
+                nama_lapangan = sharedpreferences.getString(TAG_LAPANGAN + "1", null);
+                keterangan = sharedpreferences.getString(TAG_KETERANGAN + "1", null);
+                txt_view.setText(nama_lapangan);
+                txt_view2.setText(keterangan);
                 break;
             case "lap2":
                 gambar.setImageResource(R.drawable.lap2);
+                nama_lapangan = sharedpreferences.getString(TAG_LAPANGAN + "2", null);
+                keterangan = sharedpreferences.getString(TAG_KETERANGAN + "2", null);
+                txt_view.setText(nama_lapangan);
+                txt_view2.setText(keterangan);
                 break;
             case "lap3":
                 gambar.setImageResource(R.drawable.lap3);
+                nama_lapangan = sharedpreferences.getString(TAG_LAPANGAN + "3", null);
+                keterangan = sharedpreferences.getString(TAG_KETERANGAN + "3", null);
+                txt_view.setText(nama_lapangan);
+                txt_view2.setText(keterangan);
                 break;
             case "lap4":
                 gambar.setImageResource(R.drawable.lap4);
+                nama_lapangan = sharedpreferences.getString(TAG_LAPANGAN + "4", null);
+                keterangan = sharedpreferences.getString(TAG_KETERANGAN + "4", null);
+                txt_view.setText(nama_lapangan);
+                txt_view2.setText(keterangan);
                 break;
             case "lap5":
                 gambar.setImageResource(R.drawable.lap5);
+                nama_lapangan = sharedpreferences.getString(TAG_LAPANGAN + "5", null);
+                keterangan = sharedpreferences.getString(TAG_KETERANGAN + "5", null);
+                txt_view.setText(nama_lapangan);
+                txt_view2.setText(keterangan);
                 break;
             case "lap6":
                 gambar.setImageResource(R.drawable.lap6);
+                nama_lapangan = sharedpreferences.getString(TAG_LAPANGAN + "6", null);
+                keterangan = sharedpreferences.getString(TAG_KETERANGAN + "6", null);
+                txt_view.setText(nama_lapangan);
+                txt_view2.setText(keterangan);
                 break;
             case "lap7":
                 gambar.setImageResource(R.drawable.lap7);
+                nama_lapangan = sharedpreferences.getString(TAG_LAPANGAN + "7", null);
+                keterangan = sharedpreferences.getString(TAG_KETERANGAN + "7", null);
+                txt_view.setText(nama_lapangan);
+                txt_view2.setText(keterangan);
                 break;
         }
 
@@ -115,9 +147,87 @@ public class DetailLapanganActivity extends AppCompatActivity {
 
                         String nama_lapangan = jObj.getString(TAG_LAPANGAN);
                         String keterangan = jObj.getString(TAG_KETERANGAN);
+                        SharedPreferences.Editor editor = sharedpreferences.edit();
 
-                        txt_view.setText(nama_lapangan);
-                        txt_view2.setText(keterangan);
+                    switch(nama_lapangan){
+                        case "Lapangan 1":
+                            String test = sharedpreferences.getString(TAG_KETERANGAN + "1", null);
+                            if(test == null || test != keterangan){
+                                txt_view.setText(nama_lapangan);
+                                txt_view2.setText(keterangan);
+                            }
+                            editor.putString(TAG_LAPANGAN + "1", nama_lapangan);
+                            editor.putString(TAG_KETERANGAN + "1", keterangan);
+                            editor.commit();
+
+                            break;
+                        case "Lapangan 2":
+                            test = sharedpreferences.getString(TAG_KETERANGAN + "2", null);
+                            if(test == null || test != keterangan){
+                                txt_view.setText(nama_lapangan);
+                                txt_view2.setText(keterangan);
+                            }
+                            editor.putString(TAG_LAPANGAN + "2", nama_lapangan);
+                            editor.putString(TAG_KETERANGAN + "2", keterangan);
+                            editor.commit();
+
+                            break;
+                        case "Lapangan 3":
+                            test = sharedpreferences.getString(TAG_KETERANGAN + "3", null);
+                            if(test == null || test != keterangan){
+                                txt_view.setText(nama_lapangan);
+                                txt_view2.setText(keterangan);
+                            }
+                            editor.putString(TAG_LAPANGAN + "3", nama_lapangan);
+                            editor.putString(TAG_KETERANGAN + "3", keterangan);
+                            editor.commit();
+
+                            break;
+                        case "Lapangan 4":
+                            test = sharedpreferences.getString(TAG_KETERANGAN + "4", null);
+                            if(test == null || test != keterangan){
+                                txt_view.setText(nama_lapangan);
+                                txt_view2.setText(keterangan);
+                            }
+                            editor.putString(TAG_LAPANGAN + "4", nama_lapangan);
+                            editor.putString(TAG_KETERANGAN + "4", keterangan);
+                            editor.commit();
+
+                            break;
+                        case "Lapangan 5":
+                            test = sharedpreferences.getString(TAG_KETERANGAN + "5", null);
+                            if(test == null || test != keterangan){
+                                txt_view.setText(nama_lapangan);
+                                txt_view2.setText(keterangan);
+                            }
+                            editor.putString(TAG_LAPANGAN + "5", nama_lapangan);
+                            editor.putString(TAG_KETERANGAN + "5", keterangan);
+                            editor.commit();
+
+                            break;
+                        case "Lapangan 6":
+                            test = sharedpreferences.getString(TAG_KETERANGAN + "6", null);
+                            if(test == null || test != keterangan){
+                                txt_view.setText(nama_lapangan);
+                                txt_view2.setText(keterangan);
+                            }
+                            editor.putString(TAG_LAPANGAN + "6", nama_lapangan);
+                            editor.putString(TAG_KETERANGAN + "6", keterangan);
+                            editor.commit();
+
+                            break;
+                        case "Lapangan 7":
+                            test = sharedpreferences.getString(TAG_KETERANGAN + "7", null);
+                            if(test == null || test != keterangan){
+                                txt_view.setText(nama_lapangan);
+                                txt_view2.setText(keterangan);
+                            }
+                            editor.putString(TAG_LAPANGAN + "7", nama_lapangan);
+                            editor.putString(TAG_KETERANGAN + "7", keterangan);
+                            editor.commit();
+
+                            break;
+                    }
 
                     Log.e("Successfully Get Data!", jObj.toString());
 
@@ -150,5 +260,4 @@ public class DetailLapanganActivity extends AppCompatActivity {
         // Adding request to request queue
         AppController.getInstance().addToRequestQueue(strReq, tag_json_obj);
     }
-
 }
