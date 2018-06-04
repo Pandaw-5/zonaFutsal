@@ -27,6 +27,7 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
     public static final String TAG_ID = "id";
     public static final String TAG_USERNAME = "username";
     public final static String TAG_NAMA = "nama";
+    public static final String my_shared_preferences = "my_shared_preferences";
 
 
     @Override
@@ -36,6 +37,7 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        sharedpreferences = getSharedPreferences(my_shared_preferences, Context.MODE_PRIVATE);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -110,7 +112,8 @@ public class TampilanPasKlikDetailLap extends AppCompatActivity
                     startActivity(intent);
         }
         else if (id == R.id.riwayat) {
-            android.support.v4.app.FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+
+            android.support.v4.app.FragmentTransaction ft =getSupportFragmentManager().beginTransaction();
             ft.replace(R.id.tampilan,new RiwayatFragment());
             ft.commit();
         }
