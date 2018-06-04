@@ -44,7 +44,6 @@
         android:src="@drawable/lap1"
         tools:ignore="MissingConstraints" />
 
-
     <Button
         android:id="@+id/button100"
         style="?android:textAppearanceSmall"

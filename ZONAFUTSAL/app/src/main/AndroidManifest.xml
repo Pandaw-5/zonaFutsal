@@ -24,7 +24,9 @@
         <activity
             android:name=".MasukActivity"
             android:label="@string/title_activity_masuk" />
-        <activity android:name=".DetailLapanganActivity" />
+        <activity android:name=".DetailLapanganActivity"
+            android:label="Detail Lapangan "
+            android:parentActivityName=".MainActivity"/>
         <activity
             android:name=".PesanActivity"
             android:label="Pesan" />
@@ -46,7 +48,8 @@
         <activity android:name=".InfoProfilMember" />
         <activity
             android:name=".JadwalPesanLapanganActivity"
-            android:label="Jadwal List Pemesana Lapangan" />
+            android:label="Jadwal List Pemesana Lapangan"
+            android:parentActivityName=".PesanActivity"/>
         <activity android:name=".VerificationActivity"
             android:label="Verifikasi Nomer"/>
     </application>

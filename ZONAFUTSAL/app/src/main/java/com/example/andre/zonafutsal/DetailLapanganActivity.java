@@ -51,6 +51,8 @@ public class DetailLapanganActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail_lapangan);
 
+        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
+
         txt_view = findViewById(R.id.textView2);
         txt_view2 = findViewById(R.id.textView6);
         id = getIntent().getStringExtra("id");

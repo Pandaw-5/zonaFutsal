@@ -7,16 +7,24 @@
     <group android:checkableBehavior="single">
         <item
             android:id="@+id/beranda"
-            android:icon="@drawable/beranda"
+            android:icon="@drawable/ic_home_black"
             android:title="Beranda" />
         <item
             android:id="@+id/masuk"
-            android:icon="@drawable/masuk"
+            android:icon="@drawable/ic_supervisor_account_black"
             android:title="Masuk" />
         <item
             android:id="@+id/daftar"
-            android:icon="@drawable/daftar"
+            android:icon="@drawable/ic_person_add_black"
             android:title="Daftar" />
+        <item
+            android:id="@+id/riwayat"
+            android:icon="@drawable/ic_history_black"
+            android:title="Riwayat"/>
+        <item
+            android:id="@+id/pemesanan"
+            android:icon="@drawable/ic_playlist_add_black"
+            android:title="Pemesana"/>
     </group>
 
 </menu>
