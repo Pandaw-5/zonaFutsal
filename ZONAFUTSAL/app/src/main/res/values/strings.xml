@@ -61,6 +61,14 @@
         <item>Lapangan 6</item>
         <item>Lapangan 7</item>
     </string-array>
+
+    <string-array name="durasi_waktu">
+        <item>Pilih Durasi Main </item>
+        <item>1 Jam </item>
+        <item>2 Jam </item>
+        <item>3 Jam </item>
+    </string-array>
+
     <string name="zonaFutsal">Firebase Authentication</string>
 
     <string name="label_google_sign_in">Firebase + Google Sign In</string>

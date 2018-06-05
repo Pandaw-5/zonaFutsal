@@ -16,17 +16,19 @@
     <android.support.v4.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:fillViewport="true">
+        android:fillViewport="true"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="16dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical" >
+            android:orientation="vertical">
 
             <Spinner
                 android:id="@+id/spinner"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
@@ -44,13 +46,13 @@
                 android:id="@+id/imageView3"
                 android:layout_width="560dp"
                 android:layout_height="128dp"
+                android:layout_gravity="center"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
-                android:layout_gravity="center"
                 app:layout_constraintBottom_toTopOf="@+id/textView21"
                 app:layout_constraintEnd_toStartOf="@+id/txtDate"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -66,6 +68,7 @@
                 android:layout_marginEnd="48dp"
                 android:layout_marginRight="48dp"
                 android:layout_marginTop="68dp"
+                android:gravity="start"
                 android:text="Tanggal"
                 android:textSize="24sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -73,17 +76,17 @@
 
             <TextView
                 android:id="@+id/txtDate"
-                android:layout_width="571dp"
-                android:layout_height="43dp"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="17dp"
                 android:layout_marginRight="17dp"
                 android:layout_marginTop="8dp"
                 android:background="@android:color/holo_blue_dark"
                 android:clickable="false"
+                android:textAlignment="viewStart"
                 android:textColor="@android:color/black"
                 android:textSize="24dp"
-                android:textAlignment="center"
                 app:layout_constraintBottom_toTopOf="@+id/textView21"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView14"
@@ -127,7 +130,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
                     android:layout_weight="1"
-                    android:text="08:00 - 09:00"
+                    android:text="08:00"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toStartOf="parent"
@@ -142,7 +145,7 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_weight="1"
-                    android:text="09:00 - 10:00"
+                    android:text="09:00"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -159,7 +162,7 @@
                     android:layout_marginRight="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
-                    android:text="10:00 - 11:00"
+                    android:text="10:00"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -177,7 +180,7 @@
                     android:layout_marginRight="8dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:text="11:00 - 12:00"
+                    android:text="11:00"
                     android:textSize="18sp"
                     android:textStyle="bold"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -186,6 +189,14 @@
                     app:layout_constraintStart_toEndOf="@+id/radioPilih2"
                     app:layout_constraintTop_toBottomOf="@+id/radioPilih3"
                     app:layout_constraintVertical_bias="0.259" />
+
+                <Spinner
+                    android:id="@+id/spinner2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:entries="@array/durasi_waktu"
+                    android:visibility="visible" />
 
             </RadioGroup>
 

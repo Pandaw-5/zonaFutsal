@@ -53,7 +53,7 @@
         <activity
             android:name=".JadwalPesanLapanganActivity"
             android:label="Jadwal List Pemesana Lapangan"
-            android:parentActivityName=".PesanActivity"/>
+            android:parentActivityName=".MainActivity"/>
 
         <activity android:name=".VerificationActivity"
             android:label="Verifikasi Nomer"/>
