@@ -61,49 +61,49 @@ public class DetailLapanganActivity extends AppCompatActivity {
 
 
         switch(id){
-            case "lap1":
+            case "L01":
                 gambar.setImageResource(R.drawable.lap1);
                 nama_lapangan = sharedpreferences.getString(TAG_LAPANGAN + "1", null);
                 keterangan = sharedpreferences.getString(TAG_KETERANGAN + "1", null);
                 txt_view.setText(nama_lapangan);
                 txt_view2.setText(keterangan);
                 break;
-            case "lap2":
+            case "L02":
                 gambar.setImageResource(R.drawable.lap2);
                 nama_lapangan = sharedpreferences.getString(TAG_LAPANGAN + "2", null);
                 keterangan = sharedpreferences.getString(TAG_KETERANGAN + "2", null);
                 txt_view.setText(nama_lapangan);
                 txt_view2.setText(keterangan);
                 break;
-            case "lap3":
+            case "L03":
                 gambar.setImageResource(R.drawable.lap3);
                 nama_lapangan = sharedpreferences.getString(TAG_LAPANGAN + "3", null);
                 keterangan = sharedpreferences.getString(TAG_KETERANGAN + "3", null);
                 txt_view.setText(nama_lapangan);
                 txt_view2.setText(keterangan);
                 break;
-            case "lap4":
+            case "L04":
                 gambar.setImageResource(R.drawable.lap4);
                 nama_lapangan = sharedpreferences.getString(TAG_LAPANGAN + "4", null);
                 keterangan = sharedpreferences.getString(TAG_KETERANGAN + "4", null);
                 txt_view.setText(nama_lapangan);
                 txt_view2.setText(keterangan);
                 break;
-            case "lap5":
+            case "L05":
                 gambar.setImageResource(R.drawable.lap5);
                 nama_lapangan = sharedpreferences.getString(TAG_LAPANGAN + "5", null);
                 keterangan = sharedpreferences.getString(TAG_KETERANGAN + "5", null);
                 txt_view.setText(nama_lapangan);
                 txt_view2.setText(keterangan);
                 break;
-            case "lap6":
+            case "L06":
                 gambar.setImageResource(R.drawable.lap6);
                 nama_lapangan = sharedpreferences.getString(TAG_LAPANGAN + "6", null);
                 keterangan = sharedpreferences.getString(TAG_KETERANGAN + "6", null);
                 txt_view.setText(nama_lapangan);
                 txt_view2.setText(keterangan);
                 break;
-            case "lap7":
+            case "L07":
                 gambar.setImageResource(R.drawable.lap7);
                 nama_lapangan = sharedpreferences.getString(TAG_LAPANGAN + "7", null);
                 keterangan = sharedpreferences.getString(TAG_KETERANGAN + "7", null);

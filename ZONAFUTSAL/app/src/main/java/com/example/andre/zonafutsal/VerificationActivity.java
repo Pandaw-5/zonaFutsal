@@ -352,6 +352,7 @@ public class VerificationActivity extends AppCompatActivity implements
 
                 break;
             case STATE_SIGNIN_SUCCESS:
+                updateUI(STATE_VERIFY_SUCCESS);
                 // Np-op, handled by sign-in check
                 break;
         }
@@ -367,8 +368,7 @@ public class VerificationActivity extends AppCompatActivity implements
             mVerificationField.setText(null);
 
 
-        } else if (uiState == STATE_VERIFY_SUCCESS || uiState == STATE_SIGNIN_SUCCESS){
-            updateUI(STATE_INITIALIZED);
+        } else if (uiState == STATE_VERIFY_SUCCESS){
             Intent v = new Intent(getApplicationContext(), DaftarActivity.class);
             v.putExtra("no.hp", mPhoneNumberField.getText().toString());
             startActivity(v);
