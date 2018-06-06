@@ -15,8 +15,11 @@
 
     <ScrollView
         android:layout_width="match_parent"
+<<<<<<< HEAD
 
         android:layout_height="match_parent">
+=======
+>>>>>>> 4df54c0836e21a25669eb161bef63dc1808f0bae
         android:layout_height="match_parent"
         android:fillViewport="true"
         tools:layout_editor_absoluteX="16dp"
