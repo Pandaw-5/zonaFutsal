@@ -15,7 +15,7 @@
         <item
             android:id="@+id/pemesanan"
             android:icon="@drawable/ic_playlist_add_black"
-            android:title="Pemesana"/>
+            android:title="Pemesanan"/>
         <item
             android:id="@+id/keluar"
             android:icon="@drawable/ic_exit_to_app_black"
