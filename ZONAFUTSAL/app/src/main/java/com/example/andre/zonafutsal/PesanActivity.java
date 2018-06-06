@@ -6,12 +6,6 @@ import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-<<<<<<< HEAD
-import android.widget.Button;
-
-public class PesanActivity extends AppCompatActivity {
-private Button 100;
-=======
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -55,8 +49,7 @@ public class PesanActivity extends AppCompatActivity {
 
     public TextView txt_nama, txt_lapangan, txt_tanggal, txt_jam, txt_harga;
     public Button simpan;
-
->>>>>>> 544f83db6c0a94ffae50c27c74bcc53f9b19d75a
+    
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
