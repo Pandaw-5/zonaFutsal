@@ -15,14 +15,12 @@
 
     <ScrollView
         android:layout_width="match_parent"
-<<<<<<< HEAD
+
         android:layout_height="match_parent">
-=======
         android:layout_height="match_parent"
         android:fillViewport="true"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="0dp">
->>>>>>> 544f83db6c0a94ffae50c27c74bcc53f9b19d75a
 
         <LinearLayout
             android:layout_width="match_parent"
