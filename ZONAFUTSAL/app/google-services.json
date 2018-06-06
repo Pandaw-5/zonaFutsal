@@ -15,12 +15,24 @@
       },
       "oauth_client": [
         {
+          "client_id": "611575490499-h85ec9r1dih7f3lkadqgoe67u9uk65bu.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.andre.zonafutsal",
+            "certificate_hash": "c0b88d20f889ee1e7279cbba0551a6ca135fec5d"
+          }
+        },
+        {
           "client_id": "611575490499-sr59m239ftj67hg5ebsf35ir58ar1jao.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
             "package_name": "com.example.andre.zonafutsal",
             "certificate_hash": "b55a5fec4531604c4d8dc50227fa105b94ab94e7"
           }
+        },
+        {
+          "client_id": "611575490499-tg3l91a01fj9983rkns5fs0nlvi08j31.apps.googleusercontent.com",
+          "client_type": 3
         },
         {
           "client_id": "611575490499-tg3l91a01fj9983rkns5fs0nlvi08j31.apps.googleusercontent.com",
