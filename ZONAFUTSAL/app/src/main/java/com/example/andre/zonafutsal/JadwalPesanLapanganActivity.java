@@ -45,7 +45,7 @@ public class JadwalPesanLapanganActivity extends AppCompatActivity {
 
     ConnectivityManager conMgr;
 
-    private String url = Server.URL + "register.php";
+    private String url = Server.URL + "pemesanan.php";
 
     private static final String TAG = DaftarActivity.class.getSimpleName();
 
