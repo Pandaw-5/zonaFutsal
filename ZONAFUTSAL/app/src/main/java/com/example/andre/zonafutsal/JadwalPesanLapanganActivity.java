@@ -91,13 +91,15 @@ public class JadwalPesanLapanganActivity extends AppCompatActivity {
                 public void onClick(View view) {
                     String jam = pilihradio();
                     String tanggal = txtDate.getText().toString();
-
-                    if (conMgr.getActiveNetworkInfo() != null
-                            && conMgr.getActiveNetworkInfo().isAvailable()
-                            && conMgr.getActiveNetworkInfo().isConnected()) {
-                        checkLapangan(lapangan, tanggal, jam, durasi);
-                    } else {
-                        Toast.makeText(getApplicationContext(), "No Internet Connection", Toast.LENGTH_SHORT).show();
+                    conMgr = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+                    {
+                        if (conMgr.getActiveNetworkInfo() != null
+                                && conMgr.getActiveNetworkInfo().isAvailable()
+                                && conMgr.getActiveNetworkInfo().isConnected()) {
+                            checkLapangan(lapangan, tanggal, jam, durasi);
+                        } else {
+                            Toast.makeText(getApplicationContext(), "No Internet Connection", Toast.LENGTH_SHORT).show();
+                        }
                     }
                 }
             });
