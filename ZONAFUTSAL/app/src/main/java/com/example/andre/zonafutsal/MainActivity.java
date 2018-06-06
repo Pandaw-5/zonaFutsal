@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent Intent = new Intent(getApplicationContext(), DetailLapanganActivity.class);
-                Intent.putExtra("id", "lap1");
+                Intent.putExtra("id", "L01");
                 startActivity(Intent);
             }
         });
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent Intent = new Intent(getApplicationContext(), DetailLapanganActivity.class);
-                Intent.putExtra("id", "lap2");
+                Intent.putExtra("id", "L02");
                 startActivity(Intent);
             }
         });
@@ -66,7 +66,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent Intent = new Intent(getApplicationContext(), DetailLapanganActivity.class);
-                Intent.putExtra("id", "lap3");
+                Intent.putExtra("id", "L03");
                 startActivity(Intent);
             }
         });
@@ -76,7 +76,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent Intent = new Intent(getApplicationContext(), DetailLapanganActivity.class);
-                Intent.putExtra("id", "lap4");
+                Intent.putExtra("id", "L04");
                 startActivity(Intent);
             }
         });
@@ -86,7 +86,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent Intent = new Intent(getApplicationContext(), DetailLapanganActivity.class);
-                Intent.putExtra("id", "lap5");
+                Intent.putExtra("id", "L05");
                 startActivity(Intent);
             }
         });
@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent Intent = new Intent(getApplicationContext(), DetailLapanganActivity.class);
-                Intent.putExtra("id", "lap6");
+                Intent.putExtra("id", "L06");
                 startActivity(Intent);
             }
         });
@@ -106,7 +106,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View view) {
                 Intent Intent = new Intent(getApplicationContext(), DetailLapanganActivity.class);
-                Intent.putExtra("id", "lap7");
+                Intent.putExtra("id", "L07");
                 startActivity(Intent);
             }
         });

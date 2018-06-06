@@ -67,6 +67,7 @@
         <item>1 Jam </item>
         <item>2 Jam </item>
         <item>3 Jam </item>
+        <item>4 Jam </item>
     </string-array>
 
     <string name="zonaFutsal">Firebase Authentication</string>
