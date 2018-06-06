@@ -13,17 +13,21 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".JadwalPesanLapanganActivity">
 
-    <android.support.v4.widget.NestedScrollView
+    <ScrollView
         android:layout_width="match_parent"
+<<<<<<< HEAD
+        android:layout_height="match_parent">
+=======
         android:layout_height="match_parent"
         android:fillViewport="true"
         tools:layout_editor_absoluteX="16dp"
         tools:layout_editor_absoluteY="0dp">
+>>>>>>> 544f83db6c0a94ffae50c27c74bcc53f9b19d75a
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical" >
 
             <Spinner
                 android:id="@+id/spinner"
@@ -44,7 +48,7 @@
 
             <ImageView
                 android:id="@+id/imageView3"
-                android:layout_width="560dp"
+                android:layout_width="match_parent"
                 android:layout_height="128dp"
                 android:layout_gravity="center"
                 android:layout_marginBottom="8dp"
@@ -59,11 +63,11 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/spinner"
                 app:layout_constraintVertical_bias="0.0"
-                app:srcCompat="@drawable/lap1" />
+                android:src="@drawable/lap1" />
 
             <TextView
                 android:id="@+id/textView14"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="48dp"
                 android:layout_marginRight="48dp"
@@ -77,7 +81,7 @@
             <TextView
                 android:id="@+id/txtDate"
                 android:layout_width="200dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_marginBottom="8dp"
                 android:layout_marginEnd="17dp"
                 android:layout_marginRight="17dp"
@@ -96,7 +100,7 @@
 
             <TextView
                 android:id="@+id/textView21"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:layout_marginLeft="8dp"
@@ -190,15 +194,16 @@
                     app:layout_constraintTop_toBottomOf="@+id/radioPilih3"
                     app:layout_constraintVertical_bias="0.259" />
 
-                <Spinner
-                    android:id="@+id/spinner2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:entries="@array/durasi_waktu"
-                    android:visibility="visible" />
-
             </RadioGroup>
+
+            <Spinner
+                android:id="@+id/spinner2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:entries="@array/durasi_waktu"
+                android:textSize="24dp"
+                android:visibility="visible" />
 
             <Button
                 android:id="@+id/buttonPesan"
@@ -216,6 +221,6 @@
                 app:layout_constraintStart_toStartOf="parent" />
 
         </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </ScrollView>
 
 </android.support.constraint.ConstraintLayout>
